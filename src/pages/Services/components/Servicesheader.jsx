@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Mic, Volume2, Wifi, Radio, Smartphone, Headphones, Zap, Signal } from 'lucide-react';
 
 export default function VoIPHeader() {
@@ -32,15 +32,11 @@ export default function VoIPHeader() {
 
   return (
     <div className="min-h-screen bg-white flex items-center justify-center p-8 overflow-hidden">
-      <div className="max-w-7xl w-full grid md:grid-cols-2 gap-16 items-center">
+      <div className="max-w-7xl w-full grid grid-cols-1 xl:grid-cols-2 gap-16 items-center relative z-10">
         
         {/* Left Side - Content */}
-        <div className="space-y-8 z-10 relative mt-[-100px] ml-[-30px]">
-         
-          
+        <div className="space-y-8 flex flex-col items-center text-center xl:items-start xl:text-left xl:mt-[-80px]">
           <div className="space-y-2">
-           
-            
             <h1 className="text-3xl leading-tight">
               <span className="text-gray-600">Crystal Clear </span>
               <span className="text-transparent bg-clip-text bg-orange-500 mt-2">
@@ -49,33 +45,42 @@ export default function VoIPHeader() {
             </h1>
           </div>
           
-          <p className="text-[17px] text-gray-600 leading-relaxed max-w-xl">
+          <p className="font-inter text-gray-600 text-[17px] leading-7 tracking-normal text-justify">
             Transform your business communications with enterprise-grade VoIP solutions. 
             Experience unparalleled call quality, seamless integration, and advanced features 
             that scale with your growing team.
           </p>
           
-          <div className="grid grid-cols-3 gap-4 py-4">
-            <div className="text-center p-4 rounded-2xl bg-gradient-to-br from-indigo-50 to-indigo-100 hover:shadow-lg transition-shadow duration-300">
-              <div className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-indigo-700">99.9%</div>
-              <div className="text-sm text-gray-600 mt-1">Uptime</div>
-            </div>
-            <div className="text-center p-4 rounded-2xl bg-gradient-to-br from-violet-50 to-violet-100 hover:shadow-lg transition-shadow duration-300">
-              <div className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-violet-700">HD</div>
-              <div className="text-sm text-gray-600 mt-1">Quality</div>
-            </div>
-            <div className="text-center p-4 rounded-2xl bg-gradient-to-br from-cyan-50 to-cyan-100 hover:shadow-lg transition-shadow duration-300">
-              <div className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-cyan-700">24/7</div>
-              <div className="text-sm text-gray-600 mt-1">Support</div>
-            </div>
-          </div>
+<div className="grid grid-cols-1 sm:grid-cols-3 gap-4 py-4">
+  <div className="w-full sm:w-[148px] text-center p-4 rounded-2xl bg-gradient-to-br from-indigo-50 to-indigo-100 hover:shadow-lg transition-shadow duration-300">
+    <div className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-indigo-700">
+      99.9%
+    </div>
+    <div className="text-sm text-gray-600 mt-1">Uptime</div>
+  </div>
+
+  <div className="w-full sm:w-[148px] text-center p-4 rounded-2xl bg-gradient-to-br from-violet-50 to-violet-100 hover:shadow-lg transition-shadow duration-300">
+    <div className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-violet-700">
+      HD
+    </div>
+    <div className="text-sm text-gray-600 mt-1">Quality</div>
+  </div>
+
+  <div className="w-full sm:w-[148px] text-center p-4 rounded-2xl bg-gradient-to-br from-cyan-50 to-cyan-100 hover:shadow-lg transition-shadow duration-300">
+    <div className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-cyan-700">
+      24/7
+    </div>
+    <div className="text-sm text-gray-600 mt-1">Support</div>
+  </div>
+</div>
+
           
           <div className="flex gap-4 pt-2">
-            <button className="group relative px-8 py-4 bg-gradient-to-r from-indigo-500 via-violet-600 to-cyan-600 text-white squared-full font-semibold overflow-hidden transition-all duration-300 hover:shadow-2xl hover:scale-105">
+            <button style={{width:"228px"}} className="group relative px-8 py-4 bg-gradient-to-r from-indigo-500 via-violet-600 to-cyan-600 text-white squared-full font-semibold overflow-hidden transition-all duration-300 hover:shadow-2xl hover:scale-105">
               <span className="relative z-10">Get Started</span>
               <div className="absolute inset-0 bg-gradient-to-r from-cyan-600 via-violet-600 to-indigo-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </button>
-            <button className="px-8 py-4 border-2 border-gray-900 text-gray-900 squared-full font-semibold hover:bg-gray-900 hover:text-white hover:shadow-xl transition-all duration-300 relative overflow-hidden group">
+            <button style={{width:"228px"}} className="px-8 py-4 border-2 border-gray-900 text-gray-900 squared-full font-semibold hover:bg-gray-900 hover:text-white hover:shadow-xl transition-all duration-300 relative overflow-hidden group">
               <span className="relative z-10">Get Connected</span>
               <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 via-violet-500 to-cyan-500 opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
             </button>
@@ -83,7 +88,7 @@ export default function VoIPHeader() {
         </div>
 
         {/* Right Side - New 3D Network Design */}
-        <div className="relative h-[600px] flex items-center justify-center mt-[-150px] ml-[150px]">
+<div className="relative h-[600px] items-center justify-center mt-[-150px] ml-[150px] hidden xl:flex">
           
           {/* Animated gradient mesh background */}
           <div className="absolute inset-0">

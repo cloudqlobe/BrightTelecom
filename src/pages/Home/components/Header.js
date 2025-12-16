@@ -210,8 +210,8 @@ const VoIPContactHeader = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-[85vh]">
 
           {/* Left Side Content */}
-<div
-  className="
+          <div
+            className="
     flex flex-wrap justify-center
     min-[1200px]:block
     space-y-6 lg:space-y-8
@@ -219,7 +219,7 @@ const VoIPContactHeader = () => {
     mt-[-250px]
     ml-0 min-[1200px]:ml-[66px]
   "
->
+          >
 
             {/* Main Heading */}
             <div
@@ -238,32 +238,23 @@ const VoIPContactHeader = () => {
             </div>
 
             {/* Description */}
-            <p
-              className="
-                font-inter 
-                text-gray-600 
-                text-[17px] 
-                leading-relaxed 
-                max-w-[620px] 
-                mt-4 
-                
-                text-justify 
-                hyphens-auto
-              "
-            >
+            <p className="font-inter text-gray-600 text-[17px] leading-7 tracking-normal text-justify">
+
               Experience crystal-clear voice quality. Designed for reliability and performance, our platform delivers ultra-low latency, intelligent call routing, and 99.9% uptime—keeping your business seamlessly connected.
             </p>
 
             {/* CTA Button */}
-            <div
-              className="flex flex-col sm:flex-row flex-wrap gap-4 pt-2 justify-center lg:justify-start 
-                         animate-slide-up"
-              style={{ animationDelay: '0.5s' }}
-            >
+<div className="
+  flex flex-col sm:flex-row
+  flex-wrap
+  justify-center sm:justify-center md:justify-center lg:justify-start
+  gap-4 pt-2 w-full
+">
+
               <button
                 className="group px-6 md:px-8 py-3 md:py-4 
                            bg-gradient-to-r from-violet-600 via-cyan-600 to-indigo-600 
-                           text-white squared-full font-semibold text-base md:text-lg 
+                           text-white squared-full text-base md:text-lg 
                            hover:shadow-2xl hover:shadow-violet-400/50 
                            transition-all duration-500 hover:scale-105 
                            flex items-center justify-center gap-2 relative overflow-hidden"
@@ -276,7 +267,7 @@ const VoIPContactHeader = () => {
               <button
                 className="px-6 md:px-8 py-3 md:py-4 bg-white
                            border-2 border-gray-300 text-gray-900 
-                           squared-full font-semibold text-base md:text-lg 
+                           squared-full text-base md:text-lg 
                            hover:bg-violet-50 hover:border-violet-400 transition-all duration-300 
                            hover:scale-105 flex items-center justify-center gap-2 shadow-sm hover:shadow-md"
               >
