@@ -1,22 +1,22 @@
 import { useState } from 'react';
 import { Linkedin, Instagram, Facebook, MessageCircle, X, Menu } from "lucide-react";
-
+ 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
+ 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
-
+ 
   const closeMobileMenu = () => {
     setIsMobileMenuOpen(false);
   };
-
+ 
   return (
     <>
-      <nav className="w-full sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 px-4 sm:px-6 py-4 shadow-sm">
+      <nav className="w-full sticky top-0 z-50 bg-white/95 backdrop-blur-md  px-4 sm:px-6 py-4 ">
         <div className="max-w-9xl mx-auto flex items-center justify-between">
-
+ 
           {/* LEFT — LOGO */}
           <div className="text-lg sm:text-xl">
             <a href="/" style={{ display: "flex", alignItems: "center" }}>
@@ -31,8 +31,8 @@ const Navbar = () => {
               </div>
             </a>
           </div>
-
-
+ 
+ 
           {/* CENTER — DESKTOP MENU */}
           <ul className="hidden lg:flex items-center space-x-8 lg:space-x-10 font-medium">
             <li>
@@ -45,7 +45,7 @@ const Navbar = () => {
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 group-hover:w-full transition-all duration-300"></span>
               </a>
             </li>
-
+ 
             <li>
               <a
                 href="/about"
@@ -56,7 +56,7 @@ const Navbar = () => {
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 group-hover:w-full transition-all duration-300"></span>
               </a>
             </li>
-
+ 
             <li>
               <a
                 href="/services"
@@ -67,7 +67,7 @@ const Navbar = () => {
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 group-hover:w-full transition-all duration-300"></span>
               </a>
             </li>
-
+ 
             <li>
               <a
                 href="/contact"
@@ -78,7 +78,7 @@ const Navbar = () => {
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 group-hover:w-full transition-all duration-300"></span>
               </a>
             </li>
-
+ 
             <li>
               <a
                 href="/faq"
@@ -90,7 +90,7 @@ const Navbar = () => {
               </a>
             </li>
           </ul>
-
+ 
           {/* RIGHT — DESKTOP SOCIAL ICONS */}
           <div className="hidden lg:flex items-center space-x-3 lg:space-x-4">
             <a href="#" className="transform hover:-translate-y-1 transition-transform duration-200 group">
@@ -98,26 +98,26 @@ const Navbar = () => {
                 <MessageCircle className="text-white w-5 h-5" />
               </div>
             </a>
-
+ 
             <a href="#" className="transform hover:-translate-y-1 transition-transform duration-200 group">
               <div className="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center shadow-md group-hover:shadow-lg group-hover:shadow-blue-600/30 transition-all duration-200">
                 <Linkedin className="text-white w-5 h-5" />
               </div>
             </a>
-
+ 
             <a href="#" className="transform hover:-translate-y-1 transition-transform duration-200 group">
               <div className="w-8 h-8 rounded-full bg-gradient-to-br from-yellow-400 via-pink-500 to-purple-600 flex items-center justify-center shadow-md group-hover:shadow-lg group-hover:shadow-pink-500/30 transition-all duration-200">
                 <Instagram className="text-white w-5 h-5" />
               </div>
             </a>
-
+ 
             <a href="#" className="transform hover:-translate-y-1 transition-transform duration-200 group">
               <div className="w-8 h-8 rounded-full bg-blue-700 flex items-center justify-center shadow-md group-hover:shadow-lg group-hover:shadow-blue-700/30 transition-all duration-200">
                 <Facebook className="text-white w-5 h-5" />
               </div>
             </a>
           </div>
-
+ 
           {/* MOBILE MENU BUTTON */}
           <button
             onClick={toggleMobileMenu}
@@ -130,10 +130,10 @@ const Navbar = () => {
               <Menu className="w-6 h-6" />
             )}
           </button>
-
+ 
         </div>
       </nav>
-
+ 
       {/* MOBILE MENU OVERLAY */}
       {isMobileMenuOpen && (
         <div
@@ -141,7 +141,7 @@ const Navbar = () => {
           onClick={closeMobileMenu}
         ></div>
       )}
-
+ 
       {/* MOBILE MENU */}
       <div
         className={`fixed top-0 right-0 h-full w-80 bg-white shadow-2xl transform transition-transform duration-300 z-50 lg:hidden ${
@@ -161,7 +161,7 @@ const Navbar = () => {
             <X className="w-6 h-6" />
           </button>
         </div>
-
+ 
         {/* Mobile Menu Content */}
         <div className="flex-1 flex flex-col p-4 pt-6 overflow-y-auto">
           {/* Mobile Navigation Links */}
@@ -173,7 +173,7 @@ const Navbar = () => {
             >
               Home
             </a>
-
+ 
             <a
               href="/about"
               className="block py-3 px-4 text-slate-700 font-medium text-lg rounded-lg hover:bg-slate-100 transition-colors duration-200 border-l-4 border-transparent hover:border-blue-600"
@@ -181,7 +181,7 @@ const Navbar = () => {
             >
               About
             </a>
-
+ 
             <a
               href="/services"
               className="block py-3 px-4 text-slate-700 font-medium text-lg rounded-lg hover:bg-slate-100 transition-colors duration-200 border-l-4 border-transparent hover:border-blue-600"
@@ -189,7 +189,7 @@ const Navbar = () => {
             >
               Services
             </a>
-
+ 
             <a
               href="/contact"
               className="block py-3 px-4 text-slate-700 font-medium text-lg rounded-lg hover:bg-slate-100 transition-colors duration-200 border-l-4 border-transparent hover:border-blue-600"
@@ -197,7 +197,7 @@ const Navbar = () => {
             >
               Contact Us
             </a>
-
+ 
             <a
               href="/faq"
               className="block py-3 px-4 text-slate-700 font-medium text-lg rounded-lg hover:bg-slate-100 transition-colors duration-200 border-l-4 border-transparent hover:border-blue-600"
@@ -206,13 +206,13 @@ const Navbar = () => {
               FAQ
             </a>
           </nav>
-
+ 
           {/* Mobile Social Icons */}
           <div className="border-t border-slate-200 pt-6">
             <div className="flex items-center justify-center space-x-4 mb-4">
               <h3 className="text-slate-800 text-sm font-semibold uppercase tracking-wider">Connect With Us</h3>
             </div>
-
+ 
             <div className="flex justify-center space-x-4">
               <a
                 href="#"
@@ -223,7 +223,7 @@ const Navbar = () => {
                   <MessageCircle className="text-white w-5 h-5" />
                 </div>
               </a>
-
+ 
               <a
                 href="#"
                 className="transform hover:-translate-y-1 transition-transform duration-200 group p-2 rounded-lg hover:bg-slate-100"
@@ -233,7 +233,7 @@ const Navbar = () => {
                   <Linkedin className="text-white w-5 h-5" />
                 </div>
               </a>
-
+ 
               <a
                 href="#"
                 className="transform hover:-translate-y-1 transition-transform duration-200 group p-2 rounded-lg hover:bg-slate-100"
@@ -243,7 +243,7 @@ const Navbar = () => {
                   <Instagram className="text-white w-5 h-5" />
                 </div>
               </a>
-
+ 
               <a
                 href="#"
                 className="transform hover:-translate-y-1 transition-transform duration-200 group p-2 rounded-lg hover:bg-slate-100"
@@ -257,7 +257,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-
+ 
       <style jsx>{`
         @media (max-width: 391px) {
           .hide-brand-text {
@@ -268,5 +268,6 @@ const Navbar = () => {
     </>
   );
 };
-
+ 
 export default Navbar;
+ 

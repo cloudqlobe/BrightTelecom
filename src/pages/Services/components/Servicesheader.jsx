@@ -12,12 +12,12 @@ export default function VoIPHeader() {
   }, []);
 
   const floatingIcons = [
-    { Icon: Mic, color: 'from-indigo-500 to-indigo-600', delay: 0, size: 'large' },
-    { Icon: Volume2, color: 'from-violet-500 to-violet-600', delay: 1.2, size: 'medium' },
-    { Icon: Wifi, color: 'from-cyan-500 to-cyan-600', delay: 2.4, size: 'large' },
+    { Icon: Mic, color: 'from-orange-500 to-orange-600', delay: 0, size: 'large' },
+    { Icon: Volume2, color: 'from-green-500 to-green-600', delay: 1.2, size: 'medium' },
+    { Icon: Wifi, color: 'from-yellow-500 to-yellow-600', delay: 2.4, size: 'large' },
     { Icon: Radio, color: 'from-indigo-400 to-violet-500', delay: 3.6, size: 'small' },
     { Icon: Smartphone, color: 'from-violet-400 to-cyan-500', delay: 4.8, size: 'medium' },
-    { Icon: Headphones, color: 'from-cyan-400 to-indigo-500', delay: 0.6, size: 'large' },
+    { Icon: Headphones, color: 'from-red-400 to-red-500', delay: 0.6, size: 'large' },
     { Icon: Zap, color: 'from-indigo-600 to-violet-700', delay: 1.8, size: 'small' },
     { Icon: Signal, color: 'from-cyan-600 to-violet-600', delay: 3, size: 'medium' }
   ];
@@ -35,29 +35,24 @@ export default function VoIPHeader() {
       <div className="max-w-7xl w-full grid md:grid-cols-2 gap-16 items-center">
         
         {/* Left Side - Content */}
-        <div className="space-y-8 z-10 relative">
-          <div className="absolute -left-4 top-0 w-1 h-32 bg-gradient-to-b from-indigo-500 via-violet-500 to-cyan-500 rounded-full" />
+        <div className="space-y-8 z-10 relative mt-[-100px] ml-[-30px]">
+         
           
           <div className="space-y-2">
-            <div className="inline-block px-4 py-2 bg-gradient-to-r from-indigo-100 via-violet-100 to-cyan-100 rounded-full mb-4">
-              <span className="text-sm font-semibold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-violet-600 to-cyan-600">
-                ✨ Next-Gen VoIP Technology
-              </span>
-            </div>
+           
             
-            <h1 className="text-7xl font-bold leading-tight">
-              <span className="text-gray-900">Crystal Clear</span>
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-violet-600 to-cyan-600 mt-2">
+            <h1 className="text-3xl leading-tight">
+              <span className="text-gray-600">Crystal Clear </span>
+              <span className="text-transparent bg-clip-text bg-orange-500 mt-2">
                 Communication
               </span>
             </h1>
           </div>
           
-          <p className="text-xl text-gray-600 leading-relaxed max-w-xl">
+          <p className="text-[17px] text-gray-600 leading-relaxed max-w-xl">
             Transform your business communications with enterprise-grade VoIP solutions. 
             Experience unparalleled call quality, seamless integration, and advanced features 
-            that scale with your growing team. Connect from anywhere, collaborate effortlessly, 
-            and enjoy reliable service that keeps your business running smoothly.
+            that scale with your growing team.
           </p>
           
           <div className="grid grid-cols-3 gap-4 py-4">
@@ -76,11 +71,11 @@ export default function VoIPHeader() {
           </div>
           
           <div className="flex gap-4 pt-2">
-            <button className="group relative px-8 py-4 bg-gradient-to-r from-indigo-500 via-violet-600 to-cyan-600 text-white rounded-full font-semibold overflow-hidden transition-all duration-300 hover:shadow-2xl hover:scale-105">
+            <button className="group relative px-8 py-4 bg-gradient-to-r from-indigo-500 via-violet-600 to-cyan-600 text-white squared-full font-semibold overflow-hidden transition-all duration-300 hover:shadow-2xl hover:scale-105">
               <span className="relative z-10">Get Started</span>
               <div className="absolute inset-0 bg-gradient-to-r from-cyan-600 via-violet-600 to-indigo-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </button>
-            <button className="px-8 py-4 border-2 border-gray-900 text-gray-900 rounded-full font-semibold hover:bg-gray-900 hover:text-white hover:shadow-xl transition-all duration-300 relative overflow-hidden group">
+            <button className="px-8 py-4 border-2 border-gray-900 text-gray-900 squared-full font-semibold hover:bg-gray-900 hover:text-white hover:shadow-xl transition-all duration-300 relative overflow-hidden group">
               <span className="relative z-10">Get Connected</span>
               <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 via-violet-500 to-cyan-500 opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
             </button>
@@ -88,18 +83,18 @@ export default function VoIPHeader() {
         </div>
 
         {/* Right Side - New 3D Network Design */}
-        <div className="relative h-[600px] flex items-center justify-center">
+        <div className="relative h-[600px] flex items-center justify-center mt-[-150px] ml-[150px]">
           
           {/* Animated gradient mesh background */}
           <div className="absolute inset-0">
             <div 
-              className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-indigo-400/20 to-violet-500/20 rounded-full blur-3xl"
+              className="absolute top-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl"
               style={{ 
                 transform: `translate(${Math.sin(time * 0.5) * 80}px, ${Math.cos(time * 0.3) * 60}px) scale(${1 + Math.sin(time * 0.4) * 0.3})` 
               }}
             />
             <div 
-              className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-br from-cyan-400/20 to-indigo-500/20 rounded-full blur-3xl"
+              className="absolute bottom-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl"
               style={{ 
                 transform: `translate(${Math.cos(time * 0.4) * -70}px, ${Math.sin(time * 0.5) * -50}px) scale(${1 + Math.cos(time * 0.5) * 0.3})` 
               }}
@@ -111,22 +106,6 @@ export default function VoIPHeader() {
               }}
             />
           </div>
-
-          {/* Floating particles */}
-          {/* {particles.map((particle, i) => (
-            <div
-              key={i}
-              className="absolute w-1 h-1 rounded-full"
-              style={{
-                left: `${particle.x}%`,
-                top: `${(particle.y + (time * particle.speed * 10) % 100)}%`,
-                background: i % 3 === 0 ? '#6366f1' : i % 3 === 1 ? '#8b5cf6' : '#06b6d4',
-                opacity: 0.4 + Math.sin(time + particle.delay) * 0.3,
-                transform: `scale(${particle.size})`,
-                boxShadow: `0 0 ${particle.size * 3}px currentColor`
-              }}
-            />
-          ))} */}
 
           {/* Central hub with geometric design */}
           <div className="relative z-10">

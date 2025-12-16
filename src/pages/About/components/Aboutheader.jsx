@@ -23,9 +23,9 @@ export default function AboutUsHeader() {
   }, []);
 
   const features = [
-    { icon: Users, label: "500K+ Users", color: "from-violet-500 to-violet-600" },
-    { icon: Globe, label: "150+ Countries", color: "from-cyan-500 to-cyan-600" },
-    { icon: TrendingUp, label: "99.9% Uptime", color: "from-indigo-500 to-indigo-600" },
+    { icon: Users, label: "500K+ Users", color: "from-orange-500 to-orange-600" },
+    { icon: Globe, label: "150+ Countries", color: "from-green-500 to-green-600" },
+    { icon: TrendingUp, label: "99.9% Uptime", color: "from-red-500 to-red-600" },
     { icon: Target, label: "Industry Leader", color: "from-violet-600 to-indigo-600" }
   ];
 
@@ -58,64 +58,67 @@ export default function AboutUsHeader() {
       <div className="max-w-7xl w-full grid md:grid-cols-2 gap-16 items-center relative z-10">
         
         {/* Left Side - Content */}
-        <div className="space-y-8">
+        <div className="space-y-8 mt-[-80px] ml-[-50px]">
           <div className="space-y-4">
-            <div className="inline-block px-6 py-2 bg-gradient-to-r from-violet-100 via-cyan-100 to-indigo-100 rounded-full border-2 border-violet-200">
-              <span className="text-sm font-semibold text-transparent bg-clip-text bg-gradient-to-r from-violet-600 via-cyan-600 to-indigo-600">
+            <div className="inline-block px-6 py-2 bg-white rounded-full border-2 border-gray-400">
+              <span className="text-sm font-semibold text-transparent bg-clip-text bg-black">
                 ✨ About Our Company
               </span>
             </div>
             
-            <h1 className="text-7xl font-bold leading-tight">
-              <span className="text-gray-900">Connecting</span>
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-violet-600 via-cyan-500 to-indigo-600 mt-2">
-                The World
-              </span>
-            </h1>
+           <h1 className="text-4xl leading-tight">
+  <span className="text-gray-900">Powering </span>
+  <span className="text-transparent bg-clip-text bg-orange-600">
+    Global Communication
+  </span>
+</h1>
+
           </div>
           
-          <p className="text-xl text-gray-600 leading-relaxed max-w-xl">
-            We're on a mission to transform how businesses communicate. With cutting-edge VoIP technology and a passion for innovation, we're making crystal-clear communication accessible to everyone, everywhere.
-          </p>
+         <p className="text-[17px] text-gray-600 leading-relaxed max-w-xl text-justify hyphens-auto">
+  We're on a mission to transform how businesses communicate. With cutting-edge VoIP technology and a passion for innovation, we're making crystal-clear communication accessible to everyone, everywhere.
+</p>
+
 
           {/* Mini stats */}
           <div className="grid grid-cols-2 gap-4 pt-4">
-            <div className="p-5 rounded-2xl bg-gradient-to-br from-violet-50 to-violet-100 border-2 border-violet-200 hover:shadow-lg hover:shadow-violet-200/50 transition-all duration-300">
+            <div className="p-2 rounded-2xl bg-gradient-to-br from-violet-50 to-violet-100 border-2 border-violet-200 hover:shadow-lg hover:shadow-violet-200/50 transition-all duration-300">
               <div className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-violet-700">2015</div>
               <div className="text-sm text-gray-600 mt-1">Founded</div>
             </div>
-            <div className="p-5 rounded-2xl bg-gradient-to-br from-cyan-50 to-cyan-100 border-2 border-cyan-200 hover:shadow-lg hover:shadow-cyan-200/50 transition-all duration-300">
+            <div className="p-2  rounded-2xl bg-gradient-to-br from-cyan-50 to-cyan-100 border-2 border-cyan-200 hover:shadow-lg hover:shadow-cyan-200/50 transition-all duration-300">
               <div className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-cyan-700">500K+</div>
               <div className="text-sm text-gray-600 mt-1">Active Users</div>
             </div>
           </div>
           
           <div className="flex gap-4 pt-2">
-            <button className="group relative px-8 py-4 bg-gradient-to-r from-violet-600 via-cyan-500 to-indigo-600 text-white rounded-full font-semibold overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-violet-300/50 hover:scale-105">
+            <button className="group relative px-8 py-4 bg-gradient-to-r from-violet-600 via-cyan-500 to-indigo-600 text-white squared-full font-semibold overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-violet-300/50 hover:scale-105">
               <span className="relative z-10">Learn More</span>
               <div className="absolute inset-0 bg-gradient-to-r from-indigo-600 via-violet-500 to-cyan-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </button>
-            <button className="px-8 py-4 border-2 border-gray-900 text-gray-900 rounded-full font-semibold hover:bg-gray-900 hover:text-white hover:shadow-xl transition-all duration-300">
+            <button className="px-8 py-4 border-2 border-gray-900 text-gray-900 squared-full font-semibold hover:bg-gray-900 hover:text-white hover:shadow-xl transition-all duration-300">
               Contact Us
             </button>
           </div>
         </div>
 
         {/* Right Side - 3D Globe Network Animation */}
-        <div className="relative h-[600px] flex items-center justify-center">
+        <div className="relative h-[520px] flex items-center justify-center  origin-center mt-[-130px] ml-[130px]">
+
           
           {/* Glowing background orbs */}
           <div className="absolute inset-0">
             <div 
-              className="absolute top-1/4 left-1/4 w-72 h-72 bg-gradient-to-br from-violet-300/40 to-violet-400/40 rounded-full blur-3xl"
+              className="absolute top-1/4 left-1/4 w-72 h-72 bg-white rounded-full blur-3xl"
               style={{ transform: `scale(${1 + Math.sin(time) * 0.2})` }}
             />
             <div 
-              className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-gradient-to-br from-cyan-300/40 to-cyan-400/40 rounded-full blur-3xl"
+              className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-white rounded-full blur-3xl"
               style={{ transform: `scale(${1 + Math.cos(time * 0.8) * 0.2})` }}
             />
             <div 
-              className="absolute top-1/2 left-1/2 w-64 h-64 bg-gradient-to-br from-indigo-300/30 to-indigo-400/30 rounded-full blur-3xl"
+              className="absolute top-1/2 left-1/2 w-64 h-64 bg-white rounded-full blur-3xl"
               style={{ transform: `translate(-50%, -50%) scale(${1 + Math.sin(time * 1.2) * 0.15})` }}
             />
           </div>
@@ -172,18 +175,7 @@ export default function AboutUsHeader() {
                 </div>
 
                 {/* Connection line to center */}
-                <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ left: `-${x}px, top: -${y}px, width: ${Math.abs(x) * 2}px`, height: `${Math.abs(y) * 2}px` }}>
-                  <line
-                    x1={x > 0 ? 0 : Math.abs(x) * 2}
-                    y1={y > 0 ? 0 : Math.abs(y) * 2}
-                    x2={x > 0 ? Math.abs(x) * 2 : 0}
-                    y2={y > 0 ? Math.abs(y) * 2 : 0}
-                    stroke={index % 3 === 0 ? '#8b5cf6' : index % 3 === 1 ? '#06b6d4' : '#6366f1'}
-                    strokeWidth="2"
-                    strokeDasharray="5,5"
-                    opacity="0.4"
-                  />
-                </svg>
+               
               </div>
             );
           })}
