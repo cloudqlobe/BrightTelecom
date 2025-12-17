@@ -50,11 +50,11 @@ const VoIPFAQHeader = () => {
         <div className="absolute top-1/2 right-1/3 w-96 h-96 bg-blue-400/10 rounded-full blur-3xl animate-blob-morph" style={{ animationDelay: '4s' }}></div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-8 py-20">
+      <div className="relative z-10 max-w-7xl mx-auto py-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center min-h-[85vh]">
 
           {/* Left Side Content */}
-          <div className="space-y-8 text-center lg:text-left ml-[-70px] mt-[-120px]">
+          <div className="space-y-8 text-center lg:text-left ">
             
             {/* Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-cyan-100 to-indigo-100 border border-cyan-300 rounded-full animate-fade-in">

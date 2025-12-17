@@ -60,10 +60,11 @@ export default function AboutUsHeader() {
         <div className="space-y-8 flex flex-col items-center text-center xl:items-start xl:text-left xl:mt-[-80px]">
           <div className="space-y-4">
             <div className="inline-block px-6 py-2 bg-white rounded-full border-2 border-gray-400">
-              <span className="text-sm font-semibold text-transparent bg-clip-text bg-black">
+              <span className="text-sm font-semibold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-blue-500">
                 ✨ About Our Company
               </span>
             </div>
+
 
             <h1 className="text-4xl leading-tight">
               <span className="text-gray-900">Powering </span>
@@ -82,9 +83,8 @@ export default function AboutUsHeader() {
           {/* Mini stats */}
           <div className="flex flex-col sm:flex-row md:justify-center lg:justify-start gap-4 pt-2 w-full">
 
-            <div className="w-full sm:w-full md:w-[228px] text-center p-4 rounded-2xl 
-                  bg-gradient-to-br from-violet-50 to-violet-100 
-                  hover:shadow-lg transition-shadow duration-300">
+            <div className="w-full sm:w-full md:w-[228px] text-center p-4 
+                  bg-gradient-to-br from-violet-50 to-violet-100">
               <div className="text-3xl font-bold text-transparent bg-clip-text 
                     bg-gradient-to-r from-indigo-600 to-indigo-700">
                 2015
@@ -92,9 +92,8 @@ export default function AboutUsHeader() {
               <div className="text-sm text-gray-600 mt-1">Founded</div>
             </div>
 
-            <div className="w-full sm:w-full md:w-[228px] text-center p-4 rounded-2xl 
-                  bg-gradient-to-br from-cyan-50 to-cyan-100 
-                  hover:shadow-lg transition-shadow duration-300">
+            <div className="w-full sm:w-full md:w-[228px] text-center p-4
+                  bg-gradient-to-br from-cyan-50 to-cyan-100 ">
               <div className="text-3xl font-bold text-transparent bg-clip-text 
                     bg-gradient-to-r from-indigo-600 to-indigo-700">
                 500K+
