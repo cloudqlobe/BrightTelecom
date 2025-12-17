@@ -1,5 +1,6 @@
 import React from 'react';
-import { Mail, Phone, MapPin, Send, Clock, MessageSquare } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, MessageSquare } from 'lucide-react';
+import { Wifi, Zap } from 'lucide-react';
 
 export default function ContactHeader() {
   return (
@@ -23,14 +24,15 @@ export default function ContactHeader() {
           }
         }
         
-        @keyframes orbit {
-          from {
-            transform: rotate(0deg) translateX(120px) rotate(0deg);
-          }
-          to {
-            transform: rotate(360deg) translateX(120px) rotate(-360deg);
-          }
-        }
+@keyframes orbit {
+  from {
+    transform: rotate(0deg) translateX(160px) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translateX(160px) rotate(-360deg);
+  }
+}
+
         
         @keyframes scale-pulse {
           0%, 100% {
@@ -81,98 +83,82 @@ export default function ContactHeader() {
           <div className="absolute -bottom-32 left-1/3 w-72 h-72 bg-pink-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-float" style={{ animationDelay: '2s' }}></div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-6 lg:px-0 w-full relative z-10">
+        <div className="max-w-7xl mx-auto px-6 lg:px-6 w-full relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center text-center lg:text-left">
 
             {/* Left Content */}
-            <div className="space-y-8 flex flex-col items-center lg:items-start">
-              <div className="inline-block animate-slide-in">
-                <span className="text-indigo-600 font-semibold text-sm tracking-wider uppercase bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm">
-                  We'd Love to Hear From You
-                </span>
-              </div>
+            <div className="space-y-8 mt-[-57px] ml-[-60px]">
 
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight animate-slide-in" style={{ animationDelay: '0.1s' }}>
-                Get in{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600">
-                  Touch
+              <h1 className="text-3xl lg:text-3xl  text-gray-600 leading-tight">
+                Let’s Start the {" "}
+                <span className=" text-transparent bg-clip-text bg-orange-400">
+                  Conversation
                 </span>
               </h1>
 
-              <p className="font-inter text-justify text-lg text-gray-600 leading-relaxed max-w-xl animate-slide-in">
-                Have questions or ready to start your journey with us? Our team is here to help you every step of the way.
-                To make this responsive and center-aligned on mobile, but keep the left-aligned layout on desktop, you only need to adjust the grid + left content alignment using Tailwind responsive utilities.
+            <p className="font-inter text-gray-600 text-[17px] leading-7 tracking-normal text-justify">
+                Have questions about our services or need expert assistance?
+                Our team is always ready to help you with reliable and timely support.
+                Reach out to us for sales inquiries, technical help, or general information.
+                We value your time and ensure quick responses to all messages.
+                Let’s connect and build seamless communication solutions together.
               </p>
 
-              {/* Contact Info Cards */}
-              <div className="space-y-4 animate-slide-in w-full max-w-md lg:max-w-none">
-                <div className="flex items-center gap-4 p-4 bg-white/80 backdrop-blur-sm rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer">
-                  <div className="w-12 h-12 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Phone className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
-                    <p className="text-sm text-gray-500 font-medium">Phone</p>
-                    <p className="text-gray-900 font-semibold">+1 (555) 123-4567</p>
-                  </div>
-                </div>
+              <div className="flex flex-wrap gap-4">
+                <button className="group relative px-8 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 text-white squared-xl font-semibold text-lg shadow-lg shadow-indigo-500/50 hover:shadow-xl hover:shadow-indigo-600/60 transition-all duration-300 hover:scale-105">
+                  Get Started
+                  <span className="absolute inset-0 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10 blur"></span>
+                </button>
 
-                <div className="flex items-center gap-4 p-4 bg-white/80 backdrop-blur-sm rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer">
-                  <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Mail className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
-                    <p className="text-sm text-gray-500 font-medium">Email</p>
-                    <p className="text-gray-900 font-semibold">hello@company.com</p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-4 p-4 bg-white/80 backdrop-blur-sm rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer">
-                  <div className="w-12 h-12 bg-gradient-to-br from-pink-500 to-pink-600 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <MapPin className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
-                    <p className="text-sm text-gray-500 font-medium">Location</p>
-                    <p className="text-gray-900 font-semibold">San Francisco, CA</p>
-                  </div>
-                </div>
+                <button className="px-8 py-4 bg-white text-gray-900 squared-xl font-semibold text-lg border-2 border-gray-200 hover:border-indigo-600 hover:text-indigo-600 transition-all duration-300 hover:scale-105">
+                  Get Connected
+                </button>
               </div>
 
-              {/* Quick Stats */}
-              {/* <div className="flex flex-wrap gap-6 pt-4 animate-slide-in" style={{ animationDelay: '0.4s' }}>
+              <div className="flex items-center gap-8 pt-4">
                 <div className="flex items-center gap-2">
-                  <Clock className="w-5 h-5 text-indigo-600" />
-                  <span className="text-sm text-gray-600 font-medium">24/7 Available</span>
+                  <Zap className="w-5 h-5 text-yellow-500" />
+                  <span className="text-sm text-gray-600 font-medium">99.9% Uptime</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <MessageSquare className="w-5 h-5 text-purple-600" />
-                  <span className="text-sm text-gray-600 font-medium">Quick Response</span>
+                  <Wifi className="w-5 h-5 text-green-500" />
+                  <span className="text-sm text-gray-600 font-medium">HD Quality</span>
                 </div>
-              </div> */}
+                <div className="flex items-center gap-2">
+                  <Phone className="w-5 h-5 text-indigo-500" />
+                  <span className="text-sm text-gray-600 font-medium">24/7 Support</span>
+                </div>
+              </div>
             </div>
 
             {/* Right Side - Interactive Contact Visual */}
-            <div className="relative hidden lg:flex items-center justify-center h-96 md:h-[500px]">
+            <div className="relative hidden lg:flex items-center justify-center 
+  h-[600px] xl:h-[700px]"
+              style={{ marginTop: "-82px", marginLeft:"100px" }}>
               {/* Rotating Circle Background */}
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-64 h-64 md:w-80 md:h-80 rounded-full border-2 border-dashed border-indigo-200 animate-rotate-slow"></div>
+                <div className="w-80 h-80 xl:w-96 xl:h-96 
+  rounded-full border-2 border-dashed border-indigo-200 
+  animate-rotate-slow">
+                </div>
               </div>
 
               {/* Main Contact Icon Container */}
               <div className="relative z-10">
-                <div className="relative w-28 h-28 md:w-36 md:h-36 
-    bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 
-    rounded-full shadow-2xl flex items-center justify-center animate-scale-pulse">
+                <div className="relative w-36 h-36 xl:w-44 xl:h-44 
+  bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 
+  rounded-full shadow-2xl flex items-center justify-center animate-scale-pulse">
 
-                  <div className="w-20 h-20 md:w-28 md:h-28 
-      bg-white rounded-full flex items-center justify-center">
+                  <div className="w-28 h-28 xl:w-36 xl:h-36 
+    bg-white rounded-full flex items-center justify-center">
 
                     <Send
-                      className="w-10 h-10 md:w-14 md:h-14 text-indigo-600 transform -rotate-45"
+                      className="w-14 h-14 xl:w-18 xl:h-18 text-indigo-600 -rotate-45"
                       strokeWidth={1.5}
                     />
                   </div>
-
                 </div>
+
               </div>
 
 
@@ -226,7 +212,10 @@ export default function ContactHeader() {
 
               {/* Glowing Effect */}
               <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                <div className="w-56 h-56 md:w-64 md:h-64 bg-gradient-to-br from-indigo-400 via-purple-400 to-pink-400 rounded-full blur-3xl opacity-20 animate-scale-pulse"></div>
+                <div className="w-72 h-72 xl:w-96 xl:h-96 
+  bg-gradient-to-br from-indigo-400 via-purple-400 to-pink-400 
+  rounded-full blur-3xl opacity-25 animate-scale-pulse">
+                </div>
               </div>
             </div>
 

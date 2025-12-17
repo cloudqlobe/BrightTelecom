@@ -54,13 +54,7 @@ const VoIPFAQHeader = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center min-h-[85vh]">
 
           {/* Left Side Content */}
-          <div className="space-y-8 text-center lg:text-left ">
-            
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-cyan-100 to-indigo-100 border border-cyan-300 rounded-full animate-fade-in">
-              <HelpCircle className="w-4 h-4 text-indigo-600 animate-spin-slow" />
-              <span className="text-indigo-700 text-sm font-semibold">Frequently Asked Questions</span>
-            </div>
+          <div className="space-y-8 text-center lg:text-left " style={{marginTop:"-183px"}}>
 
             {/* Main Heading */}
             <div className="space-y-4 animate-fade-in" style={{ animationDelay: '0.1s' }}>
@@ -81,8 +75,7 @@ const VoIPFAQHeader = () => {
 
             {/* Description */}
             <p className="text-[17px] text-gray-600 leading-relaxed max-w-xl mx-auto lg:mx-0 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-              Browse through our comprehensive knowledge base or search for specific 
-              topics. Get instant answers to common questions about our VoIP services.
+Browse through our comprehensive knowledge base to explore detailed guides, tutorials, and troubleshooting resources. Search for specific topics or keywords to quickly find the information you need. Get instant answers to common questions about our VoIP services, features, pricing, and setup process. Our FAQs are designed to help you resolve issues faster without waiting for support. Stay informed and make the most out of our communication solutions.
             </p>
 
             {/* Search Bar */}
@@ -106,41 +99,9 @@ const VoIPFAQHeader = () => {
                   Search
                 </button>
               </div>
-
-              {/* Popular Searches */}
              
             </div>
 
-            {/* Stats */}
-            <div className="flex items-center justify-center lg:justify-start gap-8 pt-4 animate-fade-in" style={{ animationDelay: '0.4s' }}>
-              <div className="text-center lg:text-left">
-                <div className="text-4xl font-bold bg-gradient-to-r from-cyan-600 to-indigo-600 bg-clip-text text-transparent mb-1">500+</div>
-                <div className="text-sm text-gray-600 font-medium">Articles</div>
-              </div>
-              <div className="w-px h-14 bg-gradient-to-b from-cyan-300 to-indigo-300"></div>
-              <div className="text-center lg:text-left">
-                <div className="text-4xl font-bold bg-gradient-to-r from-cyan-600 to-indigo-600 bg-clip-text text-transparent mb-1">98%</div>
-                <div className="text-sm text-gray-600 font-medium">Solved</div>
-              </div>
-              <div className="w-px h-14 bg-gradient-to-b from-cyan-300 to-indigo-300"></div>
-              <div className="text-center lg:text-left">
-                <div className="text-4xl font-bold bg-gradient-to-r from-cyan-600 to-indigo-600 bg-clip-text text-transparent mb-1">24/7</div>
-                <div className="text-sm text-gray-600 font-medium">Support</div>
-              </div>
-            </div>
-
-            {/* CTA */}
-            <div className="flex flex-wrap gap-4 justify-center lg:justify-start animate-fade-in" style={{ animationDelay: '0.5s' }}>
-              <button className="group px-8 py-4 bg-gradient-to-r from-cyan-600 to-indigo-600 
-                       text-white squared-full font-semibold text-lg 
-                       hover:shadow-2xl hover:shadow-cyan-500/50 
-                       transition-all duration-500 hover:scale-105 
-                       flex items-center gap-2 relative overflow-hidden">
-                <span className="relative z-10">Browse All Topics</span>
-                <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform relative z-10" />
-                <div className="absolute inset-0 bg-gradient-to-r from-indigo-600 to-cyan-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              </button>
-            </div>
           </div>
 
           {/* Right Side - Animated Design */}

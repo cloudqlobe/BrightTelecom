@@ -1,95 +1,167 @@
 import React, { useState, useEffect } from 'react';
 import { Phone, Shield, Zap, Globe, Users, BarChart3, CheckCircle2, ArrowRight } from 'lucide-react';
-
+ 
 const VoIPFeaturesSection = () => {
   const [activeFeature, setActiveFeature] = useState(0);
   const [hoveredCard, setHoveredCard] = useState(null);
-
+ 
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveFeature((prev) => (prev + 1) % 6);
     }, 4000);
     return () => clearInterval(interval);
   }, []);
-
+ 
   const features = [
     {
       icon: Phone,
       title: 'HD Call Quality',
       description: 'Crystal-clear voice calls with advanced noise cancellation and echo suppression.',
-      stats: { value: 'HD', label: 'Opus Codec' }
+      stats: { value: 'HD', label: 'Opus Codec' },
+      gradient: 'from-blue-500 to-blue-600',
+      lightBg: 'bg-blue-50',
+      border: 'border-blue-200',
+      hoverBorder: 'hover:border-blue-400',
+      shadow: 'shadow-blue-200/50',
+      glowBg: 'bg-blue-100/80',
+      iconBg: 'bg-blue-100',
+      iconColor: 'text-blue-600',
+      textColor: 'text-blue-600',
+      badgeBg: 'bg-blue-50',
+      badgeBorder: 'border-blue-200'
     },
     {
       icon: Shield,
       title: 'Enterprise Security',
       description: 'Bank-grade AES-256 encryption with end-to-end security protocols.',
-      stats: { value: 'AES-256', label: 'Encryption' }
+      stats: { value: 'AES-256', label: 'Encryption' },
+      gradient: 'from-purple-500 to-purple-600',
+      lightBg: 'bg-purple-50',
+      border: 'border-purple-200',
+      hoverBorder: 'hover:border-purple-400',
+      shadow: 'shadow-purple-200/50',
+      glowBg: 'bg-purple-100/80',
+      iconBg: 'bg-purple-100',
+      iconColor: 'text-purple-600',
+      textColor: 'text-purple-600',
+      badgeBg: 'bg-purple-50',
+      badgeBorder: 'border-purple-200'
     },
     {
       icon: Globe,
       title: 'Global Connectivity',
       description: 'Connect seamlessly across 150+ countries with local numbers.',
-      stats: { value: '150+', label: 'Countries' }
+      stats: { value: '150+', label: 'Countries' },
+      gradient: 'from-emerald-500 to-emerald-600',
+      lightBg: 'bg-emerald-50',
+      border: 'border-emerald-200',
+      hoverBorder: 'hover:border-emerald-400',
+      shadow: 'shadow-emerald-200/50',
+      glowBg: 'bg-emerald-100/80',
+      iconBg: 'bg-emerald-100',
+      iconColor: 'text-emerald-600',
+      textColor: 'text-emerald-600',
+      badgeBg: 'bg-emerald-50',
+      badgeBorder: 'border-emerald-200'
     },
     {
       icon: Users,
       title: 'Team Collaboration',
       description: 'Video conferencing, screen sharing, and team chat in one platform.',
-      stats: { value: '1000+', label: 'Participants' }
+      stats: { value: '1000+', label: 'Participants' },
+      gradient: 'from-orange-500 to-orange-600',
+      lightBg: 'bg-orange-50',
+      border: 'border-orange-200',
+      hoverBorder: 'hover:border-orange-400',
+      shadow: 'shadow-orange-200/50',
+      glowBg: 'bg-orange-100/80',
+      iconBg: 'bg-orange-100',
+      iconColor: 'text-orange-600',
+      textColor: 'text-orange-600',
+      badgeBg: 'bg-orange-50',
+      badgeBorder: 'border-orange-200'
     },
     {
       icon: BarChart3,
       title: 'Analytics & Insights',
       description: 'Real-time analytics and detailed reporting for data-driven decisions.',
-      stats: { value: '50+', label: 'Reports' }
+      stats: { value: '50+', label: 'Reports' },
+      gradient: 'from-pink-500 to-pink-600',
+      lightBg: 'bg-pink-50',
+      border: 'border-pink-200',
+      hoverBorder: 'hover:border-pink-400',
+      shadow: 'shadow-pink-200/50',
+      glowBg: 'bg-pink-100/80',
+      iconBg: 'bg-pink-100',
+      iconColor: 'text-pink-600',
+      textColor: 'text-pink-600',
+      badgeBg: 'bg-pink-50',
+      badgeBorder: 'border-pink-200'
     },
     {
       icon: Zap,
       title: 'Instant Deployment',
       description: 'Get started in minutes with our cloud-based infrastructure.',
-      stats: { value: '5 min', label: 'Setup' }
+      stats: { value: '5 min', label: 'Setup' },
+      gradient: 'from-amber-500 to-amber-600',
+      lightBg: 'bg-amber-50',
+      border: 'border-amber-200',
+      hoverBorder: 'hover:border-amber-400',
+      shadow: 'shadow-amber-200/50',
+      glowBg: 'bg-amber-100/80',
+      iconBg: 'bg-amber-100',
+      iconColor: 'text-amber-600',
+      textColor: 'text-amber-600',
+      badgeBg: 'bg-amber-50',
+      badgeBorder: 'border-amber-200'
     }
   ];
-
+ 
   return (
-    <section className="relative py-20 bg-gradient-to-br from-blue-50 via-white to-cyan-50 overflow-hidden">
+    <section className="relative bg-white overflow-hidden">
       {/* Background Decorations */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 right-20 w-96 h-96 bg-blue-200/20 rounded-full blur-3xl animate-float-slow"></div>
-        <div className="absolute bottom-20 left-20 w-80 h-80 bg-cyan-200/20 rounded-full blur-3xl animate-float-slow" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute bottom-20 left-20 w-80 h-80 bg-purple-200/20 rounded-full blur-3xl animate-float-slow" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-emerald-200/10 rounded-full blur-3xl animate-float-slow" style={{ animationDelay: '4s' }}></div>
+        {/* Grid Pattern */}
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:64px_64px]"></div>
       </div>
-
+ 
       <div className="relative max-w-7xl mx-auto px-6">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", fontWeight: "300" }} className="text-4xl md:text-5xl text-slate-900 mb-4">
+        <div className="text-center mb-20">
+          <div className="inline-block px-4 py-2 mb-6 bg-gradient-to-r from-blue-50 to-purple-50 border border-slate-200 rounded-full">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 text-sm font-semibold tracking-wide">POWERFUL FEATURES</span>
+          </div>
+          <h2 className="text-5xl md:text-6xl font-bold text-slate-900 mb-6 leading-tight">
             Everything You Need for
             <br />
-            <span style={{ marginLeft: "15px" }} className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-600">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 animate-gradient">
               Modern Communication
             </span>
           </h2>
-
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+ 
+          <p className="text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
             Discover the comprehensive suite of features designed to elevate your business communications.
           </p>
         </div>
-
+ 
         {/* Feature Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {features.map((feature, index) => {
             const Icon = feature.icon;
             const isActive = activeFeature === index;
             const isHovered = hoveredCard === index;
-
+ 
             return (
               <div
                 key={index}
                 className={`
-                  group relative bg-white rounded-2xl p-8 border-2 transition-all duration-500 cursor-pointer
+                  group relative bg-white rounded-3xl p-8 border-2 transition-all duration-500 cursor-pointer overflow-hidden
                   ${isActive || isHovered
-                    ? 'border-blue-600 shadow-2xl shadow-blue-200/50 scale-105 -translate-y-2'
-                    : 'border-slate-200 hover:border-blue-300 hover:shadow-lg'
+                    ? `${feature.border} shadow-2xl ${feature.shadow} scale-105 -translate-y-2`
+                    : `border-slate-200 ${feature.hoverBorder} hover:shadow-xl`
                   }
                 `}
                 onMouseEnter={() => setHoveredCard(index)}
@@ -97,94 +169,68 @@ const VoIPFeaturesSection = () => {
               >
                 {/* Active Indicator */}
                 {isActive && (
-                  <div className="absolute -top-2 -right-2 w-4 h-4 bg-blue-600 rounded-full animate-ping"></div>
+                  <div className={`absolute -top-2 -right-2 w-4 h-4 bg-gradient-to-r ${feature.gradient} rounded-full animate-ping`}></div>
                 )}
-
+ 
                 {/* Glow Effect */}
                 {(isActive || isHovered) && (
-                  <div className="absolute inset-0 bg-blue-100/50 rounded-2xl blur-xl -z-10 animate-pulse-glow"></div>
+                  <div className={`absolute inset-0 ${feature.glowBg} rounded-3xl blur-2xl -z-10 animate-pulse-glow`}></div>
                 )}
-
+ 
+                {/* Gradient Orb Background */}
+                <div className={`absolute top-0 right-0 w-32 h-32 ${feature.lightBg} rounded-full blur-2xl -translate-y-1/2 translate-x-1/2 opacity-50`}></div>
+ 
                 {/* Icon */}
                 <div className={`
-                  w-16 h-16 rounded-2xl flex items-center justify-center mb-6 transition-all duration-300
+                  relative w-16 h-16 rounded-2xl flex items-center justify-center mb-6 transition-all duration-300
                   ${isActive || isHovered
-                    ? 'bg-gradient-to-br from-blue-600 to-cyan-600 scale-110 rotate-3'
-                    : 'bg-blue-100'
+                    ? `bg-gradient-to-br ${feature.gradient} scale-110 rotate-3 shadow-lg ${feature.shadow}`
+                    : `${feature.iconBg}`
                   }
                 `}>
-                  <Icon className={`w-8 h-8 transition-colors ${isActive || isHovered ? 'text-white' : 'text-blue-600'
+                  <Icon className={`w-8 h-8 transition-colors ${isActive || isHovered ? 'text-white' : feature.iconColor
                     }`} />
                 </div>
-
+ 
                 {/* Title */}
-                <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors">
+                <h3 className={`text-xl font-bold text-slate-900 mb-3 transition-colors ${isActive || isHovered ? feature.textColor : ''}`}>
                   {feature.title}
                 </h3>
-
+ 
                 {/* Description */}
                 <p className="text-slate-600 mb-6 leading-relaxed">
                   {feature.description}
                 </p>
-
+ 
                 {/* Stats Badge */}
-                <div className="inline-flex items-center gap-3 px-4 py-2 bg-blue-50 rounded-lg border border-blue-200">
+                <div className={`inline-flex items-center gap-3 px-4 py-2 ${feature.badgeBg} rounded-xl border ${feature.badgeBorder}`}>
                   <div className="text-center">
-                    <div className="text-lg font-bold text-blue-600">{feature.stats.value}</div>
+                    <div className={`text-lg font-bold ${feature.textColor}`}>{feature.stats.value}</div>
                     <div className="text-xs text-slate-500">{feature.stats.label}</div>
                   </div>
                 </div>
-
+ 
                 {/* Progress Bar */}
                 <div className="mt-6 h-1 bg-slate-200 rounded-full overflow-hidden">
                   <div
-                    className={`h-full bg-gradient-to-r from-blue-600 to-cyan-600 transition-all duration-700 ${isActive || isHovered ? 'w-full' : 'w-0'
+                    className={`h-full bg-gradient-to-r ${feature.gradient} transition-all duration-700 ${isActive || isHovered ? 'w-full' : 'w-0'
                       }`}
                   ></div>
                 </div>
-
+ 
                 {/* Arrow Indicator */}
                 <div className={`
                   absolute bottom-8 right-8 transition-all duration-300
                   ${isActive || isHovered ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4'}
                 `}>
-                  <ArrowRight className="w-5 h-5 text-blue-600" />
+                  <ArrowRight className={`w-5 h-5 ${feature.textColor}`} />
                 </div>
               </div>
             );
           })}
         </div>
-
-        {/* Feature Indicators */}
-        <div className="flex justify-center gap-2">
-          {features.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setActiveFeature(index)}
-              className={`h-1 rounded-full transition-all duration-300 ${activeFeature === index
-                  ? 'bg-blue-600 w-8'
-                  : 'bg-slate-300 hover:bg-blue-400 w-1'
-                }`}
-              aria-label={`Go to feature ${index + 1}`}
-            ></button>
-          ))}
-        </div>
-
-        {/* Bottom CTA */}
-        <div className="mt-16 text-center">
-          <div className="inline-flex flex-col sm:flex-row gap-4 items-center">
-            <button className="group px-8 py-4 bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-full font-semibold text-lg hover:shadow-2xl hover:shadow-blue-300/50 transition-all duration-300 hover:scale-105 flex items-center gap-2">
-              Explore All Features
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </button>
-            <button className="px-8 py-4 bg-white border-2 border-blue-600 text-blue-600 rounded-full font-semibold text-lg hover:bg-blue-50 transition-all duration-300 hover:scale-105 flex items-center gap-2">
-              <Phone className="w-5 h-5" />
-              Contact Sales
-            </button>
-          </div>
-        </div>
       </div>
-
+ 
       <style jsx>{`
         @keyframes float-slow {
           0%, 100% {
@@ -196,10 +242,18 @@ const VoIPFeaturesSection = () => {
         }
         @keyframes pulse-glow {
           0%, 100% {
-            opacity: 0.5;
+            opacity: 0.4;
           }
           50% {
-            opacity: 1;
+            opacity: 0.8;
+          }
+        }
+        @keyframes gradient {
+          0%, 100% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
           }
         }
         .animate-float-slow {
@@ -208,9 +262,14 @@ const VoIPFeaturesSection = () => {
         .animate-pulse-glow {
           animation: pulse-glow 2s ease-in-out infinite;
         }
+        .animate-gradient {
+          background-size: 200% 200%;
+          animation: gradient 5s ease infinite;
+        }
       `}</style>
     </section>
   );
 };
-
+ 
 export default VoIPFeaturesSection;
+ 

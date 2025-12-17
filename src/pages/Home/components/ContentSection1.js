@@ -5,11 +5,17 @@ export default function ContentSection2() {
 
         {/* MAIN HEADING */}
         <div className="text-center">
-          <h2 style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", fontWeight: "300" }} className="text-4xl md:text-5xl text-slate-900 mb-4">
-            Business Voice
+          <h2
+            style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", fontWeight: "300" }}
+            className="text-4xl md:text-5xl text-slate-900 mb-4"
+          >
+            Global Voice Solutions
             <br />
-            <span style={{ marginLeft: "15px" }} className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-600">
-              Without Boundaries
+            <span
+              style={{ marginLeft: "15px" }}
+              className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-600"
+            >
+              Powered by GIANT VOIP
             </span>
           </h2>
         </div>
@@ -29,13 +35,14 @@ export default function ContentSection2() {
               CC Voice Routes
             </h3>
 
-            <p className="font-inter text-gray-600 text-[17px] leading-7 tracking-normal text-justify">
-              MARYAAM TELECOM’s CC voice routes are engineered for high-volume call center operations, delivering consistent and crystal-clear call quality with minimal latency. Utilizing a robust, multi-carrier infrastructure with intelligent routing algorithms, we guarantee uninterrupted communication across domestic and international networks. Businesses can scale operations efficiently, maintain superior voice clarity, and reduce dropped calls, ensuring a seamless experience for both customers and agents.
-            </p>
+<p className="font-inter text-gray-600 text-[17px] leading-7 tracking-normal text-justify">
+  GIANT VOIP delivers high-performance CC voice routes specifically designed for modern call centers and high-volume outbound operations. Our infrastructure is powered by multiple tier-1 carriers, ensuring low latency, stable connectivity, and consistently clear voice quality across domestic and international destinations. Even during peak traffic periods, businesses experience smooth call flow, minimal jitter, and reliable voice transmission that supports large-scale campaigns.
+</p>
 
-            <p className="font-inter text-gray-600 text-[17px] leading-7 tracking-normal text-justify">
-              Beyond call quality, MARYAAM TELECOM provides proactive route monitoring, dynamic traffic management, and detailed analytics to optimize performance continuously. Our CC routes are designed for long-term reliability, adapting to fluctuating traffic while maintaining compliance with industry standards. Enterprises gain improved agent productivity, operational efficiency, and peace of mind knowing their communications are stable, secure, and high-performing at all times.
-            </p>
+<p className="font-inter text-gray-600 text-[17px] leading-7 tracking-normal text-justify">
+  With intelligent routing algorithms, automatic failover protection, and continuous quality monitoring, our CC voice routes maintain high answer rates and reduced call failures. Real-time traffic optimization allows enterprises to scale operations seamlessly while accessing detailed performance reports, quality metrics, and operational insights—giving full visibility and control over voice traffic without service interruptions.
+</p>
+
           </div>
         </div>
 
@@ -54,13 +61,14 @@ export default function ContentSection2() {
               CLI Routes
             </h3>
 
-            <p className="font-inter text-gray-600 text-[17px] leading-7 tracking-normal text-justify">
-              MARYAAM TELECOM’s CLI routes provide accurate, verified caller ID presentation to enhance answer rates, establish trust, and strengthen business credibility. Our routes are fully optimized for local and international traffic, ensuring that every call is delivered with consistency and reliability, even during high-traffic periods. By maintaining strict compliance with global regulations, we protect businesses from delivery errors and caller ID mismatches.
-            </p>
+<p className="font-inter text-gray-600 text-[17px] leading-7 tracking-normal text-justify">
+  GIANT VOIP’s CLI routes ensure accurate and consistent caller ID presentation, helping businesses build credibility and significantly improve call answer rates. Each route is carefully tested and validated to comply with regional telecom regulations, allowing seamless local and international connectivity while reducing the risk of call blocking or filtering by operators.
+</p>
 
-            <p className="font-inter text-gray-600 text-[17px] leading-7 tracking-normal text-justify">
-              Our CLI solutions are equipped with advanced routing logic, real-time performance monitoring, and flexible configurations to meet enterprise requirements. Businesses benefit from detailed reports, transparent analytics, and optimized call flow, reducing call rejection rates and improving campaign efficiency. With MARYAAM TELECOM, companies can execute large-scale campaigns with confidence, ensuring every customer receives professional, reliable communication.
-            </p>
+<p className="font-inter text-gray-600 text-[17px] leading-7 tracking-normal text-justify">
+  Backed by real-time monitoring and adaptive routing technology, our CLI solutions minimize call rejections and maintain stable CLI display across networks. Businesses benefit from transparent analytics, improved campaign performance, and enhanced customer engagement, making our CLI routes ideal for enterprises requiring reliability, compliance, and consistent call delivery.
+</p>
+
           </div>
         </div>
 
@@ -79,13 +87,14 @@ export default function ContentSection2() {
               CLI & CC Termination
             </h3>
 
-            <p className="font-inter text-gray-600 text-[17px] leading-7 tracking-normal text-justify">
-              MARYAAM TELECOM’s CLI and CC termination services offer end-to-end reliable voice connectivity for businesses worldwide. Utilizing multi-carrier termination, smart routing, and advanced traffic management, we deliver superior call clarity, minimal latency, and high delivery accuracy. Our solutions guarantee consistent performance across different networks and geographic regions while maintaining full compliance with local and international regulations.
-            </p>
+<p className="font-inter text-gray-600 text-[17px] leading-7 tracking-normal text-justify">
+  GIANT VOIP provides reliable CLI and CC termination services through a globally distributed carrier network built for performance and scalability. Our termination routes are optimized for high delivery rates, crystal-clear audio quality, and minimal call drops, ensuring smooth and dependable voice communication across multiple regions and telecom operators.
+</p>
 
-            <p className="font-inter text-gray-600 text-[17px] leading-7 tracking-normal text-justify">
-              Businesses gain comprehensive insights through real-time monitoring, route balancing, and detailed analytics, ensuring optimal performance and stability. Designed for high-capacity operations, MARYAAM TELECOM’s termination solutions reduce call drops, maintain excellent audio quality, and provide scalable infrastructure to support growth. Companies can rely on our services for dependable, professional, and globally compliant voice communication.
-            </p>
+<p className="font-inter text-gray-600 text-[17px] leading-7 tracking-normal text-justify">
+  Leveraging advanced routing intelligence, live traffic supervision, and proactive quality management, we ensure consistent and compliant voice termination for mission-critical business operations. Our scalable infrastructure supports long-term growth, operational stability, and enterprise-level reliability, making GIANT VOIP a trusted partner for global voice termination needs.
+</p>
+
           </div>
         </div>
 
