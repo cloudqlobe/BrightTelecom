@@ -1,290 +1,198 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send, CheckCircle } from 'lucide-react';
+import { Phone, Mail, User, Building2, MessageSquare, Globe, Zap, Shield, Headphones, ArrowRight, Users } from 'lucide-react';
 
-export default function ContactPage() {
+const VoIPRegister = () => {
   const [formData, setFormData] = useState({
-    name: '',
+    fullName: '',
     email: '',
     phone: '',
-    subject: '',
+    company: '',
+    employees: '',
     message: ''
   });
-  
-  const [errors, setErrors] = useState({});
-  const [submitted, setSubmitted] = useState(false);
-  const [contacts, setContacts] = useState([]);
 
-  const validateForm = () => {
-    const newErrors = {};
-    
-    if (!formData.name.trim()) {
-      newErrors.name = 'Name is required';
-    }
-    
-    if (!formData.email.trim()) {
-      newErrors.email = 'Email is required';
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = 'Email is invalid';
-    }
-    
-    if (!formData.phone.trim()) {
-      newErrors.phone = 'Phone is required';
-    } else if (!/^\d{10}$/.test(formData.phone.replace(/[-\s]/g, ''))) {
-      newErrors.phone = 'Phone must be 10 digits';
-    }
-    
-    if (!formData.subject.trim()) {
-      newErrors.subject = 'Subject is required';
-    }
-    
-    if (!formData.message.trim()) {
-      newErrors.message = 'Message is required';
-    }
-    
-    return newErrors;
+  const features = [
+    { icon: Phone, title: 'Crystal Clear Calls', desc: 'HD voice quality for every conversation', color: 'from-blue-500 to-blue-600' },
+    { icon: Zap, title: 'Instant Setup', desc: 'Get started in less than 5 minutes', color: 'from-purple-500 to-purple-600' },
+    { icon: Shield, title: 'Bank-Level Security', desc: 'End-to-end encryption for all calls', color: 'from-green-500 to-green-600' },
+    { icon: Headphones, title: '24/7 Support', desc: 'Expert help whenever you need it', color: 'from-orange-500 to-orange-600' }
+  ];
+
+  const handleInputChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-    
-    if (errors[name]) {
-      setErrors(prev => ({
-        ...prev,
-        [name]: ''
-      }));
-    }
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    
-    const newErrors = validateForm();
-    
-    if (Object.keys(newErrors).length === 0) {
-      const newContact = {
-        ...formData,
-        id: Date.now(),
-        timestamp: new Date().toLocaleString()
-      };
-      
-      setContacts(prev => [...prev, newContact]);
-      setSubmitted(true);
-      
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        subject: '',
-        message: ''
-      });
-      
-      setTimeout(() => {
-        setSubmitted(false);
-      }, 3000);
-    } else {
-      setErrors(newErrors);
-    }
+  const handleSubmit = () => {
+    console.log('Form submitted:', formData);
+    alert('Thank you! We will contact you soon.');
   };
 
   return (
-    <div className="min-h-screen bg-gray-200 py-12 px-4">
-      <div className="max-w-6xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-default text-blue-600 mb-3">Get In Touch</h1>
-          <p className="text-gray-600 text-lg">We'd love to hear from you. Send us a message!</p>
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-8 mb-12">
-          {/* Contact Info Cards */}
-          <div className="bg-blue-200 rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow">
-            <div className="flex items-center justify-center w-12 h-12 bg-blue-100 rounded-full mb-4">
-              <Phone className="text-blue-600" size={24} />
-            </div>
-            <h3 className="font-semibold text-gray-800 mb-2">Phone</h3>
-            <p className="text-gray-600">+1 (555) 123-4567</p>
-          </div>
-
-          <div className="bg-orange-200 rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow">
-            <div className="flex items-center justify-center w-12 h-12 bg-purple-100 rounded-full mb-4">
-              <Mail className="text-purple-600" size={24} />
-            </div>
-            <h3 className="font-semibold text-gray-800 mb-2">Email</h3>
-            <p className="text-gray-600">contact@example.com</p>
-          </div>
-
-          <div className="bg-green-200 rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow">
-            <div className="flex items-center justify-center w-12 h-12 bg-green-100 rounded-full mb-4">
-              <MapPin className="text-green-600" size={24} />
-            </div>
-            <h3 className="font-semibold text-gray-800 mb-2">Location</h3>
-            <p className="text-gray-600">Thrissur, Kerala, IN</p>
-          </div>
-        </div>
-
-        {/* Contact Form */}
-        <div className="bg-white rounded-2xl shadow-2xl p-8 mb-8">
-          <h2 className="text-2xl font-bold text-gray-800 mb-6">Send us a Message</h2>
+    <div className="min-h-screen bg-gray-100 flex items-center justify-center p-6">
+      <div className="w-full max-w-7xl bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100">
+        <div className="flex flex-col lg:flex-row min-h-[700px]">
           
-          {submitted && (
-            <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg flex items-center gap-3">
-              <CheckCircle className="text-green-600" size={24} />
-              <p className="text-green-700 font-medium">Message sent successfully!</p>
-            </div>
-          )}
-
-          <div className="space-y-6">
-            <div className="grid md:grid-cols-2 gap-6">
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Full Name *
-                </label>
-                <input
-                  type="text"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition ${
-                    errors.name ? 'border-red-500' : 'border-gray-300'
-                  }`}
-                  placeholder="John Doe"
-                />
-                {errors.name && (
-                  <p className="mt-1 text-sm text-red-600">{errors.name}</p>
-                )}
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Email Address *
-                </label>
-                <input
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition ${
-                    errors.email ? 'border-red-500' : 'border-gray-300'
-                  }`}
-                  placeholder="john@example.com"
-                />
-                {errors.email && (
-                  <p className="mt-1 text-sm text-red-600">{errors.email}</p>
-                )}
-              </div>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-6">
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Phone Number *
-                </label>
-                <input
-                  type="tel"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition ${
-                    errors.phone ? 'border-red-500' : 'border-gray-300'
-                  }`}
-                  placeholder="1234567890"
-                />
-                {errors.phone && (
-                  <p className="mt-1 text-sm text-red-600">{errors.phone}</p>
-                )}
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Subject *
-                </label>
-                <input
-                  type="text"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition ${
-                    errors.subject ? 'border-red-500' : 'border-gray-300'
-                  }`}
-                  placeholder="How can we help?"
-                />
-                {errors.subject && (
-                  <p className="mt-1 text-sm text-red-600">{errors.subject}</p>
-                )}
-              </div>
-            </div>
-
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Message *
-              </label>
-              <textarea
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                rows="5"
-                className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition resize-none ${
-                  errors.message ? 'border-red-500' : 'border-gray-300'
-                }`}
-                placeholder="Tell us more about your inquiry..."
-              ></textarea>
-              {errors.message && (
-                <p className="mt-1 text-sm text-red-600">{errors.message}</p>
-              )}
-            </div>
-
-            <button
-              onClick={handleSubmit}
-              className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold py-3 px-6 rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all flex items-center justify-center gap-2 shadow-lg hover:shadow-xl"
-            >
-              <Send size={20} />
-              Send Message
-            </button>
-          </div>
-        </div>
-
-        {/* Submitted Contacts Display */}
-        {contacts.length > 0 && (
-          <div className="bg-white rounded-2xl shadow-2xl p-8">
-            <h2 className="text-2xl font-bold text-gray-800 mb-6">Contact Submissions ({contacts.length})</h2>
-            <div className="space-y-4">
-              {contacts.map((contact) => (
-                <div key={contact.id} className="border border-gray-200 rounded-lg p-4 hover:shadow-md transition">
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div>
-                      <p className="text-sm text-gray-600">Name</p>
-                      <p className="font-semibold text-gray-800">{contact.name}</p>
-                    </div>
-                    <div>
-                      <p className="text-sm text-gray-600">Email</p>
-                      <p className="font-semibold text-gray-800">{contact.email}</p>
-                    </div>
-                    <div>
-                      <p className="text-sm text-gray-600">Phone</p>
-                      <p className="font-semibold text-gray-800">{contact.phone}</p>
-                    </div>
-                    <div>
-                      <p className="text-sm text-gray-600">Subject</p>
-                      <p className="font-semibold text-gray-800">{contact.subject}</p>
-                    </div>
-                    <div className="md:col-span-2">
-                      <p className="text-sm text-gray-600">Message</p>
-                      <p className="text-gray-800">{contact.message}</p>
-                    </div>
-                    <div className="md:col-span-2">
-                      <p className="text-xs text-gray-500">Submitted: {contact.timestamp}</p>
-                    </div>
-                  </div>
+          {/* Left Side - Registration Form */}
+          <div className="w-full lg:w-1/2 p-12 flex flex-col justify-center bg-gradient-to-br from-gray-50 to-white">
+            <div className="max-w-md mx-auto w-full">
+              {/* Header */}
+              <div className="mb-8">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl mb-4">
+                  <Phone className="text-white" size={32} />
                 </div>
-              ))}
+                <h1 className="text-4xl font-bold text-gray-800 mb-3">Let's Connect</h1>
+                <p className="text-gray-600 text-lg">Fill in your details and our team will reach out to you within 24 hours</p>
+              </div>
+
+              {/* Form */}
+              <div className="space-y-5">
+                <div className="relative group">
+                  <User className="absolute left-4 top-4 text-gray-400 group-focus-within:text-blue-600 transition-colors" size={20} />
+                  <input
+                    type="text"
+                    name="fullName"
+                    placeholder="Full Name *"
+                    value={formData.fullName}
+                    onChange={handleInputChange}
+                    className="w-full pl-12 pr-4 py-4 border-2 border-gray-200 rounded-xl focus:border-blue-600 focus:outline-none transition-all duration-200 bg-white"
+                  />
+                </div>
+
+                <div className="relative group">
+                  <Mail className="absolute left-4 top-4 text-gray-400 group-focus-within:text-blue-600 transition-colors" size={20} />
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Email Address *"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    className="w-full pl-12 pr-4 py-4 border-2 border-gray-200 rounded-xl focus:border-blue-600 focus:outline-none transition-all duration-200 bg-white"
+                  />
+                </div>
+
+                <div className="relative group">
+                  <Phone className="absolute left-4 top-4 text-gray-400 group-focus-within:text-blue-600 transition-colors" size={20} />
+                  <input
+                    type="tel"
+                    name="phone"
+                    placeholder="Phone Number *"
+                    value={formData.phone}
+                    onChange={handleInputChange}
+                    className="w-full pl-12 pr-4 py-4 border-2 border-gray-200 rounded-xl focus:border-blue-600 focus:outline-none transition-all duration-200 bg-white"
+                  />
+                </div>
+
+                <div className="relative group">
+                  <Building2 className="absolute left-4 top-4 text-gray-400 group-focus-within:text-blue-600 transition-colors" size={20} />
+                  <input
+                    type="text"
+                    name="company"
+                    placeholder="Company Name *"
+                    value={formData.company}
+                    onChange={handleInputChange}
+                    className="w-full pl-12 pr-4 py-4 border-2 border-gray-200 rounded-xl focus:border-blue-600 focus:outline-none transition-all duration-200 bg-white"
+                  />
+                </div>
+
+               
+
+                <div className="relative group">
+                  <MessageSquare className="absolute left-4 top-4 text-gray-400 group-focus-within:text-blue-600 transition-colors" size={20} />
+                  <textarea
+                    name="message"
+                    placeholder="Tell us about your requirements..."
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    rows="4"
+                    className="w-full pl-12 pr-4 py-4 border-2 border-gray-200 rounded-xl focus:border-blue-600 focus:outline-none transition-all duration-200 bg-white resize-none"
+                  />
+                </div>
+
+                <button
+                  onClick={handleSubmit}
+                  className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-4 rounded-xl font-semibold hover:from-blue-700 hover:to-indigo-700 transition-all duration-200 shadow-lg hover:shadow-xl flex items-center justify-center gap-2 group"
+                >
+                  Get Started
+                  <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
+                </button>
+              </div>
+
+              <p className="text-center text-gray-500 text-sm mt-6">
+                By submitting, you agree to our <span className="text-blue-600 font-medium cursor-pointer hover:underline">Privacy Policy</span>
+              </p>
             </div>
           </div>
-        )}
+
+          {/* Right Side - Features & Design */}
+          <div className="w-full lg:w-1/2 bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-700 p-12 flex flex-col justify-center relative overflow-hidden">
+            {/* Decorative Elements */}
+            <div className="absolute top-0 right-0 w-96 h-96 bg-white opacity-5 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+            <div className="absolute bottom-0 left-0 w-80 h-80 bg-white opacity-5 rounded-full translate-y-1/2 -translate-x-1/2"></div>
+            <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-white opacity-5 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+            
+            <div className="relative z-10 max-w-md mx-auto w-full">
+              {/* Hero Content */}
+              <div className="text-center mb-12">
+                <div className="inline-flex items-center justify-center w-20 h-20 bg-white bg-opacity-20 rounded-2xl backdrop-blur-sm mb-6 shadow-xl">
+                  <Globe className="text-white" size={40} />
+                </div>
+                <h2 className="text-4xl font-bold text-white mb-4 leading-tight">
+                  Welcome to the Future of Communication
+                </h2>
+                <p className="text-blue-100 text-lg">
+                  Join over 50,000+ businesses transforming their communication with our VoIP solution
+                </p>
+              </div>
+
+              {/* Features Grid */}
+              <div className="space-y-6">
+                {features.map((feature, index) => {
+                  const Icon = feature.icon;
+                  return (
+                    <div
+                      key={index}
+                      className="bg-white bg-opacity-10 backdrop-blur-md rounded-2xl p-6 hover:bg-opacity-20 transition-all duration-300 border border-white border-opacity-20 hover:scale-105 cursor-pointer group"
+                    >
+                      <div className="flex items-start gap-4">
+                        <div className={`bg-gradient-to-r ${feature.color} p-3 rounded-xl shadow-lg group-hover:scale-110 transition-transform`}>
+                          <Icon className="text-white" size={24} />
+                        </div>
+                        <div className="flex-1">
+                          <h3 className="text-white font-semibold text-lg mb-1">
+                            {feature.title}
+                          </h3>
+                          <p className="text-blue-100 text-sm">
+                            {feature.desc}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+
+              {/* Stats */}
+              <div className="grid grid-cols-3 gap-6 mt-12 pt-8 border-t border-white border-opacity-20">
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-white mb-1">99.9%</div>
+                  <div className="text-blue-100 text-sm">Uptime</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-white mb-1">50K+</div>
+                  <div className="text-blue-100 text-sm">Users</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-white mb-1">24/7</div>
+                  <div className="text-blue-100 text-sm">Support</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
       </div>
     </div>
   );
-}
+};
+
+export default VoIPRegister;

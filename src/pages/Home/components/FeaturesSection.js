@@ -131,12 +131,10 @@ const VoIPFeaturesSection = () => {
       <div className="relative max-w-7xl mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-20">
-          <div className="inline-block px-4 py-2 mb-6 bg-gradient-to-r from-blue-50 to-purple-50 border border-slate-200 rounded-full">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 text-sm font-semibold tracking-wide">POWERFUL FEATURES</span>
-          </div>
-          <h2 className="text-5xl md:text-6xl font-bold text-slate-900 mb-6 leading-tight">
-            Everything You Need for
-            <br />
+      
+          <h2 className="text-3xl md:text-3xl  text-slate-900 mb-6 leading-tight mt-[60px]">
+            Everything You Need for {" "}
+          
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 animate-gradient">
               Modern Communication
             </span>

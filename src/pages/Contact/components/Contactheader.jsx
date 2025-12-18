@@ -220,17 +220,6 @@ export default function ContactHeader() {
             </div>
 
           </div>
-
-          {/* Bottom CTA Section */}
-          {/* <div className="mt-16 text-center animate-slide-in" style={{ animationDelay: '0.5s' }}>
-            <button className="group relative px-8 py-4 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white rounded-2xl font-semibold text-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105">
-              <span className="relative z-10 flex items-center gap-2 justify-center">
-                Start Conversation
-                <Send className="w-5 h-5" />
-              </span>
-              <span className="absolute inset-0 rounded-2xl bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur"></span>
-            </button>
-          </div> */}
         </div>
       </header>
     </>

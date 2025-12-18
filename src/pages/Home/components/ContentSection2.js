@@ -1,20 +1,26 @@
 export default function ContentSection2() {
   return (
-    <section className="w-full bg-white py-20 px-6">
+    <section className="w-full bg-white py-20 px-6 font-inter">
       <div className="max-w-7xl mx-auto flex flex-col gap-20">
 
         {/* MAIN HEADING */}
         <div className="text-center">
-          <h2 style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", fontWeight: "300" }} className="text-4xl md:text-5xl text-slate-900 mb-4">
+          <h2
+            style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", fontWeight: "300" }}
+            className="text-4xl md:text-5xl text-slate-900 mb-4"
+          >
             Advanced Dialer Solutions for
             <br />
-            <span style={{ marginLeft: "15px" }} className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-600">
+            <span
+              style={{ marginLeft: "15px" }}
+              className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-600"
+            >
               Modern Businesses
             </span>
           </h2>
         </div>
 
-        {/* SERVICE 1 — IMAGE LEFT, CONTENT RIGHT */}
+        {/* SERVICE 1 */}
         <div className="flex flex-col md:flex-row items-center gap-12">
           <div className="md:w-1/2">
             <img
@@ -29,28 +35,27 @@ export default function ContentSection2() {
               Predictive Dialer Solutions
             </h3>
 
-            <p className="font-inter text-gray-600 text-[17px] leading-7 tracking-normal text-justify">
-              Our predictive dialer solutions are engineered to maximize agent
-              productivity by intelligently dialing multiple numbers and routing
-              only answered calls to available agents. This minimizes idle time,
-              increases contact rates, and ensures that every campaign reaches
-              its full potential. Predictive algorithms adjust dynamically based
-              on call outcomes, agent availability, and campaign objectives, so
-              businesses can handle high-volume outbound calling efficiently.
+            <p className="text-gray-600 text-[17px] leading-8 text-justify">
+              Our predictive dialer solutions are designed to intelligently pace
+              outbound calls, ensuring agents are connected only when live
+              customers answer. By analyzing real-time agent availability, call
+              progress, and historical data, the system optimizes dialing speed
+              to reduce idle time and increase meaningful conversations across
+              high-volume campaigns.
             </p>
 
-            <p className="font-inter text-gray-600 text-[17px] leading-7 tracking-normal text-justify">
-              Built on a scalable and reliable infrastructure, these dialers
-              maintain consistent call quality and operational efficiency, while
-              providing compliance features and call control mechanisms. With
-              real-time reporting, predictive analytics, and seamless CRM
-              integration, businesses can make data-driven decisions that improve
-              ROI and elevate the customer experience.
+            <p className="mt-6 text-gray-600 text-[17px] leading-8 text-justify">
+              With built-in compliance controls, call pacing safeguards, and
+              performance monitoring, businesses maintain operational accuracy
+              while scaling outreach efforts. Real-time dashboards, campaign
+              insights, and seamless CRM integration empower teams to refine
+              strategies, improve agent efficiency, and consistently achieve
+              higher engagement outcomes.
             </p>
           </div>
         </div>
 
-        {/* SERVICE 2 — CONTENT LEFT, IMAGE RIGHT */}
+        {/* SERVICE 2 */}
         <div className="flex flex-col md:flex-row-reverse items-center gap-12">
           <div className="md:w-1/2">
             <img
@@ -65,27 +70,26 @@ export default function ContentSection2() {
               Auto Dialer Solutions
             </h3>
 
-            <p className="font-inter text-gray-600 text-[17px] leading-7 tracking-normal text-justify">
-              Our auto dialer solutions automate outbound calling by dialing
-              sequentially from your contact lists and connecting agents only
-              when calls are answered. This reduces the need for manual dialing,
-              allowing teams to focus on meaningful conversations. Auto dialers
-              ensure campaigns run smoothly even with large call volumes, keeping
-              efficiency high and error rates low.
+            <p className="text-gray-600 text-[17px] leading-8 text-justify">
+              Our auto dialer solutions streamline outbound calling by
+              automatically dialing contacts from predefined lists and routing
+              answered calls directly to agents. This approach eliminates manual
+              dialing efforts, improves calling consistency, and allows teams to
+              focus on delivering effective conversations rather than managing
+              call workflows.
             </p>
 
-            <p className="font-inter text-gray-600 text-[17px] leading-7 tracking-normal text-justify">
-              Designed for versatility, our auto dialers support multiple dialing
-              modes, live call monitoring, and integration with popular CRM
-              systems. Businesses benefit from improved visibility into campaign
-              performance, enhanced agent efficiency, and consistent communication
-              quality. Reporting dashboards provide insights for data-driven
-              strategy adjustments and optimal resource allocation.
+            <p className="mt-6 text-gray-600 text-[17px] leading-8 text-justify">
+              Featuring flexible dialing modes, live call supervision, and CRM
+              connectivity, our auto dialers adapt to diverse business use cases.
+              Detailed reporting and real-time performance metrics provide clear
+              visibility into campaign results, enabling smarter decision-making
+              and continuous optimization of outreach strategies.
             </p>
           </div>
         </div>
 
-        {/* SERVICE 3 — IMAGE LEFT, CONTENT RIGHT */}
+        {/* SERVICE 3 */}
         <div className="flex flex-col md:flex-row items-center gap-12">
           <div className="md:w-1/2">
             <img
@@ -100,23 +104,20 @@ export default function ContentSection2() {
               Call Center Dialer Solutions
             </h3>
 
-            <p className="font-inter text-gray-600 text-[17px] leading-7 tracking-normal text-justify">
-              Our call center dialer solutions provide a comprehensive platform
-              for managing both inbound and outbound communications. Intelligent
-              dialing, combined with advanced call routing, IVR, and queuing
-              features, enables contact centers to maintain high productivity
-              while offering superior customer service. The platform scales
-              effortlessly as your business grows, supporting multiple campaigns
-              and agents simultaneously.
+            <p className="text-gray-600 text-[17px] leading-8 text-justify">
+              Our call center dialer solutions offer a unified platform for
+              managing inbound and outbound communication at scale. Advanced
+              dialing logic, intelligent call routing, IVR functionality, and
+              queue management help contact centers maintain efficiency while
+              delivering consistent customer experiences across all touchpoints.
             </p>
 
-            <p className="font-inter text-gray-600 text-[17px] leading-7 tracking-normal text-justify">
-              Equipped with real-time analytics, call monitoring, and detailed
-              reporting, our solutions provide full visibility into agent activity
-              and campaign performance. Organizations can optimize workflows,
-              identify training opportunities, improve customer engagement, and
-              confidently scale operations while ensuring consistent service
-              standards across the board.
+            <p className="mt-6 text-gray-600 text-[17px] leading-8 text-justify">
+              With real-time analytics, call monitoring, and detailed reporting,
+              organizations gain full visibility into agent performance and
+              operational efficiency. These insights enable continuous workflow
+              optimization, improved service quality, and confident scaling as
+              business demands evolve.
             </p>
           </div>
         </div>
