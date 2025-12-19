@@ -67,7 +67,7 @@ const VoIPFAQ = () => {
       </div>
 
       {/* Search Bar */}
-      <div className="max-w-7xl mx-auto px-6 -mt-6">
+      <div className="max-w-7xl mx-auto px-6 -mt-[80px]">
         <div className="bg-white rounded-xl shadow-lg p-2 border border-gray-200">
           <div className="flex items-center">
             <Search className="text-gray-400 ml-3" size={20} />
@@ -86,7 +86,7 @@ const VoIPFAQ = () => {
       <div className="max-w-7xl mx-auto px-6 py-12">
         <div className="flex gap-8">
           {/* Left Sidebar - Categories */}
-          <div className="w-72 flex-shrink-0">
+          <div className="hidden lg:flex w-72 flex-shrink-0">
             <div className="sticky top-6">
               <h2 className="text-lg font-semibold text-gray-700 mb-4 px-2">Categories</h2>
               <div className="space-y-2">

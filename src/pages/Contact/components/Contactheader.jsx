@@ -87,7 +87,7 @@ export default function ContactHeader() {
           <div className="grid lg:grid-cols-2 gap-12 items-center text-center lg:text-left">
 
             {/* Left Content */}
-            <div className="space-y-8 mt-[-57px] ml-[-60px]">
+            <div className="space-y-8 mt-[-57px]">
 
               <h1 className="text-3xl lg:text-3xl  text-gray-600 leading-tight">
                 Let’s Start the {" "}
@@ -96,7 +96,7 @@ export default function ContactHeader() {
                 </span>
               </h1>
 
-            <p className="font-inter text-gray-600 text-[17px] leading-7 tracking-normal text-justify">
+            <p className="font-inter text-gray-600 text-sm sm:text-base md:text-[17px] leading-6 sm:leading-7 tracking-normal text-justify sm:text-left max-w-xl mx-auto lg:mx-0 md:text-justify lg:text-justify">
                 Have questions about our services or need expert assistance?
                 Our team is always ready to help you with reliable and timely support.
                 Reach out to us for sales inquiries, technical help, or general information.
@@ -104,7 +104,7 @@ export default function ContactHeader() {
                 Let’s connect and build seamless communication solutions together.
               </p>
 
-              <div className="flex flex-wrap gap-4">
+          <div className="flex flex-col sm:flex-row md:justify-center lg:justify-start gap-4 pt-2 w-full">
                 <button className="group relative px-8 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 text-white squared-xl font-semibold text-lg shadow-lg shadow-indigo-500/50 hover:shadow-xl hover:shadow-indigo-600/60 transition-all duration-300 hover:scale-105">
                   Get Started
                   <span className="absolute inset-0 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10 blur"></span>
@@ -115,7 +115,7 @@ export default function ContactHeader() {
                 </button>
               </div>
 
-              <div className="flex items-center gap-8 pt-4">
+<div className="hidden sm:flex md:justify-center lg:justify-start items-center gap-8 pt-4">
                 <div className="flex items-center gap-2">
                   <Zap className="w-5 h-5 text-yellow-500" />
                   <span className="text-sm text-gray-600 font-medium">99.9% Uptime</span>

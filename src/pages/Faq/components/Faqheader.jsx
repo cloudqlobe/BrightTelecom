@@ -40,78 +40,132 @@ const VoIPFAQHeader = () => {
                 <text x="100" y="40" fontSize="40" fill="#6366f1" opacity="0.3" fontWeight="bold">?</text>
               </pattern>
             </defs>
-            <rect width="100%" height="100%" fill="url(#questions)"/>
+            <rect width="100%" height="100%" fill="url(#questions)" />
           </svg>
         </div>
 
         {/* Gradient Blobs */}
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-400/10 rounded-full blur-3xl animate-blob-morph"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-indigo-400/10 rounded-full blur-3xl animate-blob-morph" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute top-1/2 right-1/3 w-96 h-96 bg-blue-400/10 rounded-full blur-3xl animate-blob-morph" style={{ animationDelay: '4s' }}></div>
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 md:w-96 md:h-96 bg-cyan-400/10 rounded-full blur-3xl animate-blob-morph"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-64 h-64 md:w-96 md:h-96 bg-indigo-400/10 rounded-full blur-3xl animate-blob-morph" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-1/2 right-1/3 w-64 h-64 md:w-96 md:h-96 bg-blue-400/10 rounded-full blur-3xl animate-blob-morph" style={{ animationDelay: '4s' }}></div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto py-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center min-h-[85vh]">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center min-h-[85vh]">
 
           {/* Left Side Content */}
-          <div className="space-y-8 text-center lg:text-left " style={{marginTop:"-183px"}}>
+          <div className="space-y-6 sm:space-y-8 text-center lg:text-left px-4 sm:px-0 lg:-mt-32">
 
             {/* Main Heading */}
             <div className="space-y-4 animate-fade-in" style={{ animationDelay: '0.1s' }}>
-              <h1 className="text-3xl md:text-4xl  text-gray-900 leading-tight">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-gray-900 leading-tight " style={{fontWeight:"300"}}>
                 Find Your{" "}
-               
                 <span className="relative mt-2">
                   <span className="text-transparent bg-clip-text bg-orange-600">
-                    Answers {" "}
-                    
+                    Answers
                   </span>
-                
                 </span>
-
-                Instantly
               </h1>
             </div>
 
             {/* Description */}
-            <p className="text-[17px] text-gray-600 leading-relaxed max-w-xl mx-auto lg:mx-0 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-Browse through our comprehensive knowledge base to explore detailed guides, tutorials, and troubleshooting resources. Search for specific topics or keywords to quickly find the information you need. Get instant answers to common questions about our VoIP services, features, pricing, and setup process. Our FAQs are designed to help you resolve issues faster without waiting for support. Stay informed and make the most out of our communication solutions.
+            <p className="font-inter text-gray-600 text-sm sm:text-base md:text-[17px] leading-6 sm:leading-7 tracking-normal text-justify sm:text-left max-w-xl mx-auto lg:mx-0 md:text-justify lg:text-justify">
+              Browse through our comprehensive knowledge base to explore detailed guides, tutorials, and troubleshooting resources. Search for specific topics or keywords to quickly find the information you need. Get instant answers to common questions about our VoIP services, features, pricing, and setup process. Our FAQs are designed to help you resolve issues faster without waiting for support. Stay informed and make the most out of our communication solutions.
             </p>
 
             {/* Search Bar */}
             <div className="relative animate-fade-in" style={{ animationDelay: '0.3s' }}>
-              <div 
-                className={`relative flex items-center gap-3 p-4 bg-white backdrop-blur-xl 
+              <div
+                className={`relative flex flex-col sm:flex-row items-stretch sm:items-center gap-3 p-3 sm:p-4 bg-white backdrop-blur-xl 
                   border-2 rounded-2xl transition-all duration-300 shadow-lg
                   ${searchActive ? 'border-cyan-500 shadow-cyan-500/20 shadow-2xl' : 'border-gray-200'}
                 `}
                 onFocus={() => setSearchActive(true)}
                 onBlur={() => setSearchActive(false)}
               >
-                <Search className={`w-5 h-5 transition-colors ${searchActive ? 'text-cyan-600' : 'text-gray-400'}`} />
-                <input
-                  type="text"
-                  placeholder="Search for answers..."
-                  className="flex-1 bg-transparent text-gray-900 placeholder-gray-400 outline-none"
-                />
-                <button className="px-6 py-2 bg-gradient-to-r from-cyan-600 to-indigo-600 text-white rounded-xl 
-                  font-semibold text-sm hover:shadow-xl hover:shadow-cyan-500/50 hover:scale-105 transition-all">
+                <div className="flex items-center gap-3 flex-1">
+                  <Search className={`w-5 h-5 transition-colors flex-shrink-0 ${searchActive ? 'text-cyan-600' : 'text-gray-400'}`} />
+                  <input
+                    type="text"
+                    placeholder="Search for answers..."
+                    className="flex-1 bg-transparent text-gray-900 placeholder-gray-400 outline-none text-sm sm:text-base"
+                  />
+                </div>
+                <button className="px-6 py-2.5 sm:py-2 bg-gradient-to-r from-cyan-600 to-indigo-600 text-white rounded-xl 
+                  font-semibold text-sm hover:shadow-xl hover:shadow-cyan-500/50 hover:scale-105 transition-all whitespace-nowrap">
                   Search
                 </button>
               </div>
-             
+            </div>
+
+            {/* Mobile Category Cards */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4 lg:hidden mt-8">
+              {faqCategories.map((category, index) => {
+                const Icon = category.icon;
+                return (
+                  <div
+                    key={index}
+                    className="relative group cursor-pointer animate-scale-in"
+                    style={{ animationDelay: `${index * 0.1}s` }}
+                  >
+                    <div className={`
+                      relative bg-white backdrop-blur-xl 
+                      border-2 rounded-xl sm:rounded-2xl p-3 sm:p-4
+                      shadow-lg transition-all duration-500
+                      hover:scale-105 hover:shadow-xl
+                      flex flex-col items-center justify-center gap-2
+                      ${category.color === 'cyan' ? 'border-cyan-300 hover:border-cyan-500 hover:shadow-cyan-500/50' :
+                        category.color === 'purple' ? 'border-purple-300 hover:border-purple-500 hover:shadow-purple-500/50' :
+                          category.color === 'green' ? 'border-green-300 hover:border-green-500 hover:shadow-green-500/50' :
+                            category.color === 'rose' ? 'border-rose-300 hover:border-rose-500 hover:shadow-rose-500/50' :
+                              category.color === 'amber' ? 'border-amber-300 hover:border-amber-500 hover:shadow-amber-500/50' :
+                                'border-blue-300 hover:border-blue-500 hover:shadow-blue-500/50'
+                      }
+                    `}>
+                      {/* Icon */}
+                      <div className={`
+                        w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl flex items-center justify-center
+                        transition-all duration-500 group-hover:rotate-12
+                        ${category.color === 'cyan' ? 'bg-gradient-to-br from-cyan-100 to-cyan-200' :
+                          category.color === 'purple' ? 'bg-gradient-to-br from-purple-100 to-purple-200' :
+                            category.color === 'green' ? 'bg-gradient-to-br from-green-100 to-green-200' :
+                              category.color === 'rose' ? 'bg-gradient-to-br from-rose-100 to-rose-200' :
+                                category.color === 'amber' ? 'bg-gradient-to-br from-amber-100 to-amber-200' :
+                                  'bg-gradient-to-br from-blue-100 to-blue-200'
+                        }
+                      `}>
+                        <Icon className={`
+                          w-5 h-5 sm:w-6 sm:h-6
+                          ${category.color === 'cyan' ? 'text-cyan-600' :
+                            category.color === 'purple' ? 'text-purple-600' :
+                              category.color === 'green' ? 'text-green-600' :
+                                category.color === 'rose' ? 'text-rose-600' :
+                                  category.color === 'amber' ? 'text-amber-600' :
+                                    'text-blue-600'
+                          }
+                        `} />
+                      </div>
+
+                      {/* Title */}
+                      <h3 className="text-gray-900 font-bold text-xs sm:text-sm text-center">
+                        {category.title}
+                      </h3>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
 
           </div>
 
-          {/* Right Side - Animated Design */}
-          <div className="hidden lg:flex relative h-[500px] items-center justify-center mt-[-300px]">
+          {/* Right Side - Animated Design (Desktop Only) */}
+          <div className="hidden lg:flex relative h-[500px] items-center justify-center lg:-mt-[300px]">
             <div className="relative w-full h-full scale-90">
 
               {/* Central Hub */}
               <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-30">
                 <div className="relative">
-                  
+
                   {/* Pulsing Rings */}
                   {[1, 2, 3, 4].map((ring) => (
                     <div
@@ -141,9 +195,9 @@ Browse through our comprehensive knowledge base to explore detailed guides, tuto
                       <div
                         key={idx}
                         className={`absolute left-1/2 top-1/2 w-4 h-4 rounded-full shadow-lg transition-all duration-500
-                          ${idx % 3 === 0 ? 'bg-cyan-400 shadow-cyan-400/50' : 
-                            idx % 3 === 1 ? 'bg-indigo-400 shadow-indigo-400/50' : 
-                            'bg-blue-400 shadow-blue-400/50'}
+                          ${idx % 3 === 0 ? 'bg-cyan-400 shadow-cyan-400/50' :
+                            idx % 3 === 1 ? 'bg-indigo-400 shadow-indigo-400/50' :
+                              'bg-blue-400 shadow-blue-400/50'}
                           ${activeOrbit === idx ? 'scale-150' : 'scale-100'}
                         `}
                         style={{
@@ -176,9 +230,9 @@ Browse through our comprehensive knowledge base to explore detailed guides, tuto
                     }}
                   >
                     {/* Connection Line */}
-                    <svg className="absolute w-full h-full pointer-events-none" 
-                      style={{ 
-                        left: '50%', 
+                    <svg className="absolute w-full h-full pointer-events-none"
+                      style={{
+                        left: '50%',
                         top: '50%',
                         width: '600px',
                         height: '600px',
@@ -189,12 +243,12 @@ Browse through our comprehensive knowledge base to explore detailed guides, tuto
                         y1="50%"
                         x2={`${x}%`}
                         y2={`${y}%`}
-                        stroke={category.color === 'cyan' ? 'rgba(6, 182, 212, 0.3)' : 
-                                category.color === 'purple' ? 'rgba(168, 85, 247, 0.3)' :
-                                category.color === 'green' ? 'rgba(34, 197, 94, 0.3)' :
-                                category.color === 'rose' ? 'rgba(244, 63, 94, 0.3)' :
+                        stroke={category.color === 'cyan' ? 'rgba(6, 182, 212, 0.3)' :
+                          category.color === 'purple' ? 'rgba(168, 85, 247, 0.3)' :
+                            category.color === 'green' ? 'rgba(34, 197, 94, 0.3)' :
+                              category.color === 'rose' ? 'rgba(244, 63, 94, 0.3)' :
                                 category.color === 'amber' ? 'rgba(251, 191, 36, 0.3)' :
-                                'rgba(59, 130, 246, 0.3)'}
+                                  'rgba(59, 130, 246, 0.3)'}
                         strokeWidth="2"
                         strokeDasharray="5,5"
                         className="animate-dash"
@@ -211,10 +265,10 @@ Browse through our comprehensive knowledge base to explore detailed guides, tuto
                         flex flex-col items-center justify-center gap-2
                         ${category.color === 'cyan' ? 'border-cyan-300 hover:border-cyan-500 hover:shadow-cyan-500/50' :
                           category.color === 'purple' ? 'border-purple-300 hover:border-purple-500 hover:shadow-purple-500/50' :
-                          category.color === 'green' ? 'border-green-300 hover:border-green-500 hover:shadow-green-500/50' :
-                          category.color === 'rose' ? 'border-rose-300 hover:border-rose-500 hover:shadow-rose-500/50' :
-                          category.color === 'amber' ? 'border-amber-300 hover:border-amber-500 hover:shadow-amber-500/50' :
-                          'border-blue-300 hover:border-blue-500 hover:shadow-blue-500/50'
+                            category.color === 'green' ? 'border-green-300 hover:border-green-500 hover:shadow-green-500/50' :
+                              category.color === 'rose' ? 'border-rose-300 hover:border-rose-500 hover:shadow-rose-500/50' :
+                                category.color === 'amber' ? 'border-amber-300 hover:border-amber-500 hover:shadow-amber-500/50' :
+                                  'border-blue-300 hover:border-blue-500 hover:shadow-blue-500/50'
                         }
                       `}>
                         {/* Icon */}
@@ -223,20 +277,20 @@ Browse through our comprehensive knowledge base to explore detailed guides, tuto
                           transition-all duration-500 group-hover:rotate-12
                           ${category.color === 'cyan' ? 'bg-gradient-to-br from-cyan-100 to-cyan-200' :
                             category.color === 'purple' ? 'bg-gradient-to-br from-purple-100 to-purple-200' :
-                            category.color === 'green' ? 'bg-gradient-to-br from-green-100 to-green-200' :
-                            category.color === 'rose' ? 'bg-gradient-to-br from-rose-100 to-rose-200' :
-                            category.color === 'amber' ? 'bg-gradient-to-br from-amber-100 to-amber-200' :
-                            'bg-gradient-to-br from-blue-100 to-blue-200'
+                              category.color === 'green' ? 'bg-gradient-to-br from-green-100 to-green-200' :
+                                category.color === 'rose' ? 'bg-gradient-to-br from-rose-100 to-rose-200' :
+                                  category.color === 'amber' ? 'bg-gradient-to-br from-amber-100 to-amber-200' :
+                                    'bg-gradient-to-br from-blue-100 to-blue-200'
                           }
                         `}>
                           <Icon className={`
                             w-6 h-6
                             ${category.color === 'cyan' ? 'text-cyan-600' :
                               category.color === 'purple' ? 'text-purple-600' :
-                              category.color === 'green' ? 'text-green-600' :
-                              category.color === 'rose' ? 'text-rose-600' :
-                              category.color === 'amber' ? 'text-amber-600' :
-                              'text-blue-600'
+                                category.color === 'green' ? 'text-green-600' :
+                                  category.color === 'rose' ? 'text-rose-600' :
+                                    category.color === 'amber' ? 'text-amber-600' :
+                                      'text-blue-600'
                             }
                           `} />
                         </div>
@@ -251,10 +305,10 @@ Browse through our comprehensive knowledge base to explore detailed guides, tuto
                           absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 blur-xl
                           ${category.color === 'cyan' ? 'bg-cyan-400/30' :
                             category.color === 'purple' ? 'bg-purple-400/30' :
-                            category.color === 'green' ? 'bg-green-400/30' :
-                            category.color === 'rose' ? 'bg-rose-400/30' :
-                            category.color === 'amber' ? 'bg-amber-400/30' :
-                            'bg-blue-400/30'
+                              category.color === 'green' ? 'bg-green-400/30' :
+                                category.color === 'rose' ? 'bg-rose-400/30' :
+                                  category.color === 'amber' ? 'bg-amber-400/30' :
+                                    'bg-blue-400/30'
                           }
                         `}></div>
                       </div>

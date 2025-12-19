@@ -12,7 +12,7 @@ const AnimatedFooter = () => {
     const steps = 60;
     const interval = duration / steps;
 
-    const targets = { users: 50000, calls: 2500000, uptime: 99.9 };
+    const targets = { users: 5000, calls: 2500000, uptime: 99.9 };
     let step = 0;
 
     const timer = setInterval(() => {

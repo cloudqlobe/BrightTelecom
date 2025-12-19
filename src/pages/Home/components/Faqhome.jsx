@@ -69,7 +69,7 @@ const VoIPFAQ = () => {
       <div className="max-w-7xl mx-auto px-6 py-12">
         <div className="flex gap-8">
           {/* Left Sidebar - Categories */}
-          <div className="w-72 flex-shrink-0">
+          <div className="hidden lg:flex w-72 flex-shrink-0">
             <div className="sticky top-6">
               <h2 className="text-lg font-semibold text-gray-700 mb-4 px-2"></h2>
               <div className="space-y-2">
