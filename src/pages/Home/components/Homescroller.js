@@ -22,8 +22,17 @@ export default function CountryTicker() {
             0% { transform: translateX(0); }
             100% { transform: translateX(-50%); }
           }
+
+          /* Desktop speed */
           .animate-scroll {
             animation: scroll 25s linear infinite;
+          }
+
+          /* Mobile speed */
+          @media (max-width: 640px) {
+            .animate-scroll {
+              animation: scroll 5s linear infinite;
+            }
           }
         `}</style>
 
@@ -37,26 +46,19 @@ export default function CountryTicker() {
               style={{ width: "300px" }}
             >
               <div className="flex items-center gap-5">
-
-                {/* FLAG */}
-                <div className="w-20 h-14 border rounded-md overflow-hidden flex-shrink-0">
+                <div className="w-20 h-14 border rounded-md overflow-hidden">
                   <img
                     src={`https://flagcdn.com/w160/${c.iso}.png`}
                     alt={c.name}
                     className="w-full h-full object-cover"
                   />
                 </div>
-
-                {/* TEXT */}
-                <div className="flex flex-col justify-center gap-2">
-                  <span className="text-gray-900 font-semibold text-base">
-                    {c.name}
-                  </span>
-                  <span className="inline-block text-sm font-mono border border-gray-300 rounded-md px-4 py-1 text-gray-700 w-fit">
+                <div className="flex flex-col gap-2">
+                  <span className="font-semibold">{c.name}</span>
+                  <span className="text-sm font-mono border px-4 py-1 rounded-md">
                     {c.dial}
                   </span>
                 </div>
-
               </div>
             </div>
           ))}
@@ -69,24 +71,19 @@ export default function CountryTicker() {
               style={{ width: "300px" }}
             >
               <div className="flex items-center gap-5">
-
-                <div className="w-20 h-14 border rounded-md overflow-hidden flex-shrink-0">
+                <div className="w-20 h-14 border rounded-md overflow-hidden">
                   <img
                     src={`https://flagcdn.com/w160/${c.iso}.png`}
                     alt={c.name}
                     className="w-full h-full object-cover"
                   />
                 </div>
-
-                <div className="flex flex-col justify-center gap-2">
-                  <span className="text-gray-900 font-semibold text-base">
-                    {c.name}
-                  </span>
-                  <span className="inline-block text-sm font-mono border border-gray-300 rounded-md px-4 py-1 text-gray-700 w-fit">
+                <div className="flex flex-col gap-2">
+                  <span className="font-semibold">{c.name}</span>
+                  <span className="text-sm font-mono border px-4 py-1 rounded-md">
                     {c.dial}
                   </span>
                 </div>
-
               </div>
             </div>
           ))}

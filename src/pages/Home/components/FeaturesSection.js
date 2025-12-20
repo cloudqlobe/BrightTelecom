@@ -118,35 +118,33 @@ const VoIPFeaturesSection = () => {
   ];
  
   return (
-    <section className="relative bg-white overflow-hidden">
+    <section className="relative bg-white overflow-hidden py-12 sm:py-16 md:py-20 lg:py-24">
       {/* Background Decorations */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 right-20 w-96 h-96 bg-blue-200/20 rounded-full blur-3xl animate-float-slow"></div>
-        <div className="absolute bottom-20 left-20 w-80 h-80 bg-purple-200/20 rounded-full blur-3xl animate-float-slow" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-emerald-200/10 rounded-full blur-3xl animate-float-slow" style={{ animationDelay: '4s' }}></div>
+        <div className="absolute top-10 sm:top-20 right-10 sm:right-20 w-48 h-48 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-blue-200/20 rounded-full blur-3xl animate-float-slow"></div>
+        <div className="absolute bottom-10 sm:bottom-20 left-10 sm:left-20 w-40 h-40 sm:w-64 sm:h-64 md:w-80 md:h-80 bg-purple-200/20 rounded-full blur-3xl animate-float-slow" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 sm:w-[400px] sm:h-[400px] md:w-[600px] md:h-[600px] bg-emerald-200/10 rounded-full blur-3xl animate-float-slow" style={{ animationDelay: '4s' }}></div>
         {/* Grid Pattern */}
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:64px_64px]"></div>
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:32px_32px] sm:bg-[size:48px_48px] md:bg-[size:64px_64px]"></div>
       </div>
  
-      <div className="relative max-w-7xl mx-auto px-6">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-20">
-      
-          <h2 className="text-3xl md:text-3xl  text-slate-900 mb-6 leading-tight mt-[60px]">
-            Everything You Need for {" "}
-          
+        <div className="text-center mb-12 sm:mb-16 md:mb-20">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-slate-900 mb-4 sm:mb-6 leading-tight px-4">
+            Everything You Need for{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 animate-gradient">
               Modern Communication
             </span>
           </h2>
  
-          <p className="text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed px-4">
             Discover the comprehensive suite of features designed to elevate your business communications.
           </p>
         </div>
  
         {/* Feature Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mb-8 sm:mb-12">
           {features.map((feature, index) => {
             const Icon = feature.icon;
             const isActive = activeFeature === index;
@@ -156,7 +154,7 @@ const VoIPFeaturesSection = () => {
               <div
                 key={index}
                 className={`
-                  group relative bg-white rounded-3xl p-8 border-2 transition-all duration-500 cursor-pointer overflow-hidden
+                  group relative bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 border-2 transition-all duration-500 cursor-pointer overflow-hidden
                   ${isActive || isHovered
                     ? `${feature.border} shadow-2xl ${feature.shadow} scale-105 -translate-y-2`
                     : `border-slate-200 ${feature.hoverBorder} hover:shadow-xl`
@@ -172,44 +170,44 @@ const VoIPFeaturesSection = () => {
  
                 {/* Glow Effect */}
                 {(isActive || isHovered) && (
-                  <div className={`absolute inset-0 ${feature.glowBg} rounded-3xl blur-2xl -z-10 animate-pulse-glow`}></div>
+                  <div className={`absolute inset-0 ${feature.glowBg} rounded-2xl sm:rounded-3xl blur-2xl -z-10 animate-pulse-glow`}></div>
                 )}
  
                 {/* Gradient Orb Background */}
-                <div className={`absolute top-0 right-0 w-32 h-32 ${feature.lightBg} rounded-full blur-2xl -translate-y-1/2 translate-x-1/2 opacity-50`}></div>
+                <div className={`absolute top-0 right-0 w-24 h-24 sm:w-32 sm:h-32 ${feature.lightBg} rounded-full blur-2xl -translate-y-1/2 translate-x-1/2 opacity-50`}></div>
  
                 {/* Icon */}
                 <div className={`
-                  relative w-16 h-16 rounded-2xl flex items-center justify-center mb-6 transition-all duration-300
+                  relative w-12 h-12 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl flex items-center justify-center mb-4 sm:mb-6 transition-all duration-300
                   ${isActive || isHovered
                     ? `bg-gradient-to-br ${feature.gradient} scale-110 rotate-3 shadow-lg ${feature.shadow}`
                     : `${feature.iconBg}`
                   }
                 `}>
-                  <Icon className={`w-8 h-8 transition-colors ${isActive || isHovered ? 'text-white' : feature.iconColor
+                  <Icon className={`w-6 h-6 sm:w-8 sm:h-8 transition-colors ${isActive || isHovered ? 'text-white' : feature.iconColor
                     }`} />
                 </div>
  
                 {/* Title */}
-                <h3 className={`text-xl font-bold text-slate-900 mb-3 transition-colors ${isActive || isHovered ? feature.textColor : ''}`}>
+                <h3 className={`text-lg sm:text-xl font-bold text-slate-900 mb-2 sm:mb-3 transition-colors ${isActive || isHovered ? feature.textColor : ''}`}>
                   {feature.title}
                 </h3>
  
                 {/* Description */}
-                <p className="text-slate-600 mb-6 leading-relaxed">
+                <p className="text-sm sm:text-base text-slate-600 mb-4 sm:mb-6 leading-relaxed">
                   {feature.description}
                 </p>
  
                 {/* Stats Badge */}
-                <div className={`inline-flex items-center gap-3 px-4 py-2 ${feature.badgeBg} rounded-xl border ${feature.badgeBorder}`}>
+                <div className={`inline-flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-1.5 sm:py-2 ${feature.badgeBg} rounded-lg sm:rounded-xl border ${feature.badgeBorder}`}>
                   <div className="text-center">
-                    <div className={`text-lg font-bold ${feature.textColor}`}>{feature.stats.value}</div>
+                    <div className={`text-base sm:text-lg font-bold ${feature.textColor}`}>{feature.stats.value}</div>
                     <div className="text-xs text-slate-500">{feature.stats.label}</div>
                   </div>
                 </div>
  
                 {/* Progress Bar */}
-                <div className="mt-6 h-1 bg-slate-200 rounded-full overflow-hidden">
+                <div className="mt-4 sm:mt-6 h-1 bg-slate-200 rounded-full overflow-hidden">
                   <div
                     className={`h-full bg-gradient-to-r ${feature.gradient} transition-all duration-700 ${isActive || isHovered ? 'w-full' : 'w-0'
                       }`}
@@ -218,10 +216,10 @@ const VoIPFeaturesSection = () => {
  
                 {/* Arrow Indicator */}
                 <div className={`
-                  absolute bottom-8 right-8 transition-all duration-300
+                  absolute bottom-6 sm:bottom-8 right-6 sm:right-8 transition-all duration-300
                   ${isActive || isHovered ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4'}
                 `}>
-                  <ArrowRight className={`w-5 h-5 ${feature.textColor}`} />
+                  <ArrowRight className={`w-4 h-4 sm:w-5 sm:h-5 ${feature.textColor}`} />
                 </div>
               </div>
             );
@@ -270,4 +268,3 @@ const VoIPFeaturesSection = () => {
 };
  
 export default VoIPFeaturesSection;
- 

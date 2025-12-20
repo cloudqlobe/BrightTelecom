@@ -67,7 +67,7 @@ const ContactCard = ({ method, index, isActive, radius, mobileTop }) => {
         {/* Card Content */}
         <div className={`
           relative ${method.bgColor} text-white
-          rounded-xl p-4 md:p-4 w-52 md:w-56 lg:w-40
+          rounded-xl p-3 sm:p-4 w-44 sm:w-52 md:w-56 lg:w-40
           shadow-lg transition-all duration-500
           ${isActive
             ? 'shadow-2xl scale-105'
@@ -76,36 +76,36 @@ const ContactCard = ({ method, index, isActive, radius, mobileTop }) => {
         `}>
           {/* Icon */}
           <div className={`
-            w-11 h-11 md:w-13 md:h-13 rounded-xl flex items-center justify-center mb-3
+            w-9 h-9 sm:w-11 sm:h-11 md:w-13 md:h-13 rounded-xl flex items-center justify-center mb-2 sm:mb-3
             bg-white/20 backdrop-blur-sm
             transition-all duration-500
             ${isActive ? 'animate-icon-bounce bg-white/30' : ''}
           `}>
-            <Icon className="w-6 h-6 md:w-7 md:h-7 text-white" />
+            <Icon className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-white" />
           </div>
 
           {/* Title */}
-          <h3 className="text-white text-sm md:text-base mb-2 font-semibold">
+          <h3 className="text-white text-xs sm:text-sm md:text-base mb-2 font-semibold">
             {method.title}
           </h3>
 
           {/* Action Arrow */}
           <div className="flex items-center gap-2 text-xs
             group-hover:gap-3 transition-all text-white">
-            <span>Connect Now</span>
-            <ArrowRight className="w-3.5 h-3.5" />
+            <span className="text-xs">Connect Now</span>
+            <ArrowRight className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
           </div>
 
           {/* Decorative corner accent */}
-          <div className="absolute top-2 right-2 w-7 h-7 border-t-2 border-r-2 border-white/30 rounded-tr-xl"></div>
-          <div className="absolute bottom-2 left-2 w-7 h-7 border-b-2 border-l-2 border-white/30 rounded-bl-xl"></div>
+          <div className="absolute top-2 right-2 w-6 h-6 sm:w-7 sm:h-7 border-t-2 border-r-2 border-white/30 rounded-tr-xl"></div>
+          <div className="absolute bottom-2 left-2 w-6 h-6 sm:w-7 sm:h-7 border-b-2 border-l-2 border-white/30 rounded-bl-xl"></div>
         </div>
 
         {/* Active Indicator */}
         {isActive && (
           <>
-            <div className="absolute -top-2 -right-2 w-4 h-4 bg-white rounded-full animate-ping"></div>
-            <div className="absolute -bottom-2 -left-2 w-4 h-4 bg-white rounded-full animate-ping" style={{ animationDelay: '0.5s' }}></div>
+            <div className="absolute -top-2 -right-2 w-3 h-3 sm:w-4 sm:h-4 bg-white rounded-full animate-ping"></div>
+            <div className="absolute -bottom-2 -left-2 w-3 h-3 sm:w-4 sm:h-4 bg-white rounded-full animate-ping" style={{ animationDelay: '0.5s' }}></div>
           </>
         )}
       </div>
@@ -174,13 +174,6 @@ const VoIPContactHeader = () => {
     }
   ];
 
-  const quickLinks = [
-    { icon: Clock, text: '24/7 Support' },
-    { icon: Globe, text: 'Global Coverage' },
-    { icon: Headphones, text: 'Expert Team' },
-    { icon: CheckCircle, text: 'Quick Response' }
-  ];
-
   return (
     <div className="min-h-screen relative overflow-hidden bg-white">
       {/* Subtle Background Pattern */}
@@ -201,35 +194,20 @@ const VoIPContactHeader = () => {
         </div>
 
         {/* Soft Gradient Spheres */}
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-violet-200/20 rounded-full blur-3xl animate-float-sphere"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-cyan-200/20 rounded-full blur-3xl animate-float-sphere" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-indigo-200/20 rounded-full blur-3xl animate-float-sphere" style={{ animationDelay: '4s' }}></div>
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-violet-200/20 rounded-full blur-3xl animate-float-sphere"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-cyan-200/20 rounded-full blur-3xl animate-float-sphere" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-1/2 left-1/2 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-indigo-200/20 rounded-full blur-3xl animate-float-sphere" style={{ animationDelay: '4s' }}></div>
       </div>
 
-      <div className="relative z-10 max-w-9xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-[85vh]">
+      <div className="relative z-10 max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-16 items-center min-h-[85vh]">
 
           {/* Left Side Content */}
-          <div
-            className="
-    flex flex-wrap justify-center
-    min-[1200px]:block
-    space-y-6 lg:space-y-8
-    text-center lg:text-left
-    mt-[-250px]
-    ml-0 min-[1200px]:ml-[66px]
-  "
-          >
+          <div className="flex flex-col items-center lg:items-start text-center lg:text-left space-y-5 sm:space-y-6 lg:space-y-8 lg:mt-[-250px] lg:ml-[66px] px-2 sm:px-4 lg:px-0">
 
             {/* Main Heading */}
-            <div
-              className="space-y-4 animate-slide-up mt-[100px]"
-              style={{ animationDelay: '0.1s' }}
-            >
-              <h1
-                style={{ fontWeight: "300" }}
-                className="text-5xl lg:text-4xl text-gray-600 leading-tight max-w-[620px]"
-              >
+            <div className="space-y-3 sm:space-y-4 animate-slide-up mt-8 sm:mt-12 lg:mt-[100px]" style={{ animationDelay: '0.1s' }}>
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl text-gray-600 leading-tight max-w-full lg:max-w-[620px] font-light">
                 The Future of{" "}
                 <span className="text-transparent bg-clip-text bg-orange-600">
                   Connectivity
@@ -238,120 +216,97 @@ const VoIPContactHeader = () => {
             </div>
 
             {/* Description */}
-            <p className="font-inter text-gray-600 text-[17px] leading-7 tracking-normal text-justify">
-
+            <p className="font-sans text-gray-600 text-sm sm:text-base md:text-[17px] leading-6 sm:leading-7 tracking-normal text-justify max-w-full lg:max-w-[620px]">
               Experience crystal-clear voice quality. Designed for reliability and performance, our platform delivers ultra-low latency, intelligent call routing, and 99.9% uptime—keeping your business seamlessly connected.
             </p>
 
-            {/* CTA Button */}
-<div className="
-  flex flex-col sm:flex-row
-  flex-wrap
-  justify-center sm:justify-center md:justify-center lg:justify-start
-  gap-4 pt-2 w-full
-">
-
-              <button
-                className="group px-6 md:px-8 py-3 md:py-4 
-                           bg-gradient-to-r from-violet-600 via-cyan-600 to-indigo-600 
-                           text-white squared-full text-base md:text-lg 
-                           hover:shadow-2xl hover:shadow-violet-400/50 
-                           transition-all duration-500 hover:scale-105 
-                           flex items-center justify-center gap-2 relative overflow-hidden"
-              >
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row flex-wrap justify-center lg:justify-start gap-3 sm:gap-4 pt-2 w-full max-w-md lg:max-w-none">
+              <button className="group w-full sm:w-auto px-5 sm:px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-violet-600 via-cyan-600 to-indigo-600 text-white text-sm sm:text-base md:text-lg hover:shadow-2xl hover:shadow-violet-400/50 transition-all duration-500 hover:scale-105 flex items-center justify-center gap-2 relative overflow-hidden">
                 <span className="relative z-10">Get Started Free</span>
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform relative z-10" />
+                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform relative z-10" />
                 <div className="absolute inset-0 bg-gradient-to-r from-indigo-600 via-violet-600 to-cyan-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </button>
 
-              <button
-                className="px-6 md:px-8 py-3 md:py-4 bg-white
-                           border-2 border-gray-300 text-gray-900 
-                           squared-full text-base md:text-lg 
-                           hover:bg-violet-50 hover:border-violet-400 transition-all duration-300 
-                           hover:scale-105 flex items-center justify-center gap-2 shadow-sm hover:shadow-md"
-              >
-                <Phone className="w-5 h-5" />
+              <button className="w-full sm:w-auto px-5 sm:px-6 md:px-8 py-3 md:py-4 bg-white border-2 border-gray-300 text-gray-900 text-sm sm:text-base md:text-lg hover:bg-violet-50 hover:border-violet-400 transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 shadow-sm hover:shadow-md">
+                <Phone className="w-4 h-4 sm:w-5 sm:h-5" />
                 Request Demo
               </button>
             </div>
           </div>
 
           {/* Right Side - Contact Methods Circle */}
-          <div className="hidden lg:flex relative h-[480px] md:h-[480px] items-center justify-center mt-12 lg:mt-[-180px] ml-[30px]">
+          <div className="hidden lg:flex relative h-[400px] sm:h-[450px] md:h-[480px] flex items-center justify-center lg:mt-[-180px] lg:ml-[30px]">
             <div className="relative w-full h-full">
-              {/* Central Phone Icon - Hidden on mobile */}
-              <div className="hidden lg:block absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-30">
+              {/* Central Phone Icon */}
+              <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-30">
                 <div className="relative">
                   {/* Pulsing Ring Background */}
-                  <div className="absolute inset-0 -m-8">
-                    <div className="w-28 h-28 rounded-full bg-violet-400/20 animate-phone-pulse"></div>
+                  <div className="absolute inset-0 -m-6 sm:-m-8">
+                    <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-full bg-violet-400/20 animate-phone-pulse"></div>
                   </div>
-                  <div className="absolute inset-0 -m-6">
-                    <div className="w-24 h-24 rounded-full bg-violet-400/30 animate-phone-pulse" style={{ animationDelay: '0.5s' }}></div>
+                  <div className="absolute inset-0 -m-4 sm:-m-6">
+                    <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full bg-violet-400/30 animate-phone-pulse" style={{ animationDelay: '0.5s' }}></div>
                   </div>
 
                   {/* Center Card with Phone Icon */}
-                  <div className="relative w-20 h-20 bg-gradient-to-br from-violet-600 via-cyan-600 to-indigo-600 rounded-2xl shadow-2xl flex items-center justify-center animate-phone-ring">
-                    <PhoneCall className="w-10 h-10 text-white" />
+                  <div className="relative w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 bg-gradient-to-br from-violet-600 via-cyan-600 to-indigo-600 rounded-2xl shadow-2xl flex items-center justify-center animate-phone-ring">
+                    <PhoneCall className="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 text-white" />
 
                     {/* Corner Decorations */}
-                    <div className="absolute top-2 right-2 w-3 h-3 border-t-2 border-r-2 border-white/50 rounded-tr-lg"></div>
-                    <div className="absolute bottom-2 left-2 w-3 h-3 border-b-2 border-l-2 border-white/50 rounded-bl-lg"></div>
+                    <div className="absolute top-1.5 right-1.5 sm:top-2 sm:right-2 w-2.5 h-2.5 sm:w-3 sm:h-3 border-t-2 border-r-2 border-white/50 rounded-tr-lg"></div>
+                    <div className="absolute bottom-1.5 left-1.5 sm:bottom-2 sm:left-2 w-2.5 h-2.5 sm:w-3 sm:h-3 border-b-2 border-l-2 border-white/50 rounded-bl-lg"></div>
                   </div>
 
                   {/* Rotating Signal Waves */}
-                  <div className="absolute inset-0 -m-4 animate-phone-rotate">
-                    <div className="w-16 h-16 border-2 border-violet-400/40 rounded-full"></div>
+                  <div className="absolute inset-0 -m-3 sm:-m-4 animate-phone-rotate">
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 border-2 border-violet-400/40 rounded-full"></div>
                   </div>
                 </div>
               </div>
 
-              {/* Contact Method Card 1 - Email (Top) */}
+              {/* Contact Method Cards */}
               <ContactCard
                 method={contactMethods[0]}
                 index={0}
                 isActive={activeContact === 0}
-                radius={170}
+                radius={window.innerWidth < 640 ? 120 : window.innerWidth < 768 ? 140 : window.innerWidth < 1024 ? 160 : 170}
                 mobileTop="8%"
               />
 
-              {/* Contact Method Card 2 - Phone (Right) */}
               <ContactCard
                 method={contactMethods[1]}
                 index={1}
                 isActive={activeContact === 1}
-                radius={170}
+                radius={window.innerWidth < 640 ? 120 : window.innerWidth < 768 ? 140 : window.innerWidth < 1024 ? 160 : 170}
                 mobileTop="33%"
               />
 
-              {/* Contact Method Card 3 - Chat (Bottom) */}
               <ContactCard
                 method={contactMethods[2]}
                 index={2}
                 isActive={activeContact === 2}
-                radius={170}
+                radius={window.innerWidth < 640 ? 120 : window.innerWidth < 768 ? 140 : window.innerWidth < 1024 ? 160 : 170}
                 mobileTop="58%"
               />
 
-              {/* Contact Method Card 4 - Office (Left) */}
               <ContactCard
                 method={contactMethods[3]}
                 index={3}
                 isActive={activeContact === 3}
-                radius={170}
+                radius={window.innerWidth < 640 ? 120 : window.innerWidth < 768 ? 140 : window.innerWidth < 1024 ? 160 : 170}
                 mobileTop="83%"
               />
 
-              {/* Floating Stats - Hidden on mobile - Positioned closer */}
+              {/* Floating Stats */}
               <div className="hidden lg:block absolute top-[10%] right-[16%] animate-float-gentle">
-                <div style={{ background: "#ffbe00" }} className="border-2 border-gray-200 rounded-xl p-3.5 shadow-lg">
-                  <div className="flex items-center gap-2.5">
-                    <div className="w-9 h-9 bg-white rounded-lg flex items-center justify-center">
-                      <CheckCircle className="w-5 h-5 text-green-600" />
+                <div style={{ background: "#ffbe00" }} className="border-2 border-gray-200 rounded-xl p-3 sm:p-3.5 shadow-lg">
+                  <div className="flex items-center gap-2 sm:gap-2.5">
+                    <div className="w-8 h-8 sm:w-9 sm:h-9 bg-white rounded-lg flex items-center justify-center">
+                      <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-600" />
                     </div>
                     <div>
-                      <div className="text-white font-bold text-lg">98%</div>
+                      <div className="text-white font-bold text-base sm:text-lg">98%</div>
                       <div className="text-white text-xs">Satisfaction</div>
                     </div>
                   </div>
@@ -359,20 +314,20 @@ const VoIPContactHeader = () => {
               </div>
 
               <div className="hidden lg:block absolute bottom-[13%] left-[13%] animate-float-gentle" style={{ animationDelay: '1s' }}>
-                <div className="bg-gradient-to-br from-pink-400 to-rose-500 border-2 border-gray-200 rounded-xl p-3.5 shadow-lg">
-                  <div className="flex items-center gap-2.5">
-                    <div className="w-9 h-9 bg-white rounded-lg flex items-center justify-center">
-                      <Clock className="w-5 h-5 text-indigo-600" />
+                <div className="bg-gradient-to-br from-pink-400 to-rose-500 border-2 border-gray-200 rounded-xl p-3 sm:p-3.5 shadow-lg">
+                  <div className="flex items-center gap-2 sm:gap-2.5">
+                    <div className="w-8 h-8 sm:w-9 sm:h-9 bg-white rounded-lg flex items-center justify-center">
+                      <Clock className="w-4 h-4 sm:w-5 sm:h-5 text-indigo-600" />
                     </div>
                     <div>
-                      <div className="text-white font-bold text-lg">24/7</div>
+                      <div className="text-white font-bold text-base sm:text-lg">24/7</div>
                       <div className="text-white text-xs">Available</div>
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* Decorative Particles - Hidden on mobile */}
+              {/* Decorative Particles */}
               {[...Array(12)].map((_, i) => (
                 <div
                   key={i}
@@ -411,60 +366,6 @@ const VoIPContactHeader = () => {
           }
           66% {
             transform: translate(-30px, 30px) scale(0.95);
-          }
-        }
-        @keyframes draw-underline {
-          from {
-            stroke-dasharray: 1000;
-            stroke-dashoffset: 1000;
-          }
-          to {
-            stroke-dasharray: 1000;
-            stroke-dashoffset: 0;
-          }
-        }
-        @keyframes orbit-ring {
-          from {
-            transform: translate(-50%, -50%) rotate(0deg);
-          }
-          to {
-            transform: translate(-50%, -50%) rotate(360deg);
-          }
-        }
-        @keyframes orbit-ring-reverse {
-          from {
-            transform: translate(-50%, -50%) rotate(360deg);
-          }
-          to {
-            transform: translate(-50%, -50%) rotate(0deg);
-          }
-        }
-        @keyframes message-bob {
-          0%, 100% {
-            transform: translateY(0) rotate(0deg);
-          }
-          50% {
-            transform: translateY(-8px) rotate(-5deg);
-          }
-        }
-        @keyframes count-up {
-          from {
-            opacity: 0;
-            transform: scale(0.5);
-          }
-          to {
-            opacity: 1;
-            transform: scale(1);
-          }
-        }
-        @keyframes signal-wave {
-          0% {
-            transform: translate(-50%, -50%) scale(0.8);
-            opacity: 0.6;
-          }
-          100% {
-            transform: translate(-50%, -50%) scale(1.2);
-            opacity: 0;
           }
         }
         @keyframes pop-in {
@@ -561,24 +462,6 @@ const VoIPContactHeader = () => {
         }
         .animate-float-sphere {
           animation: float-sphere 12s ease-in-out infinite;
-        }
-        .animate-draw-underline {
-          animation: draw-underline 2s ease-out forwards;
-        }
-        .animate-orbit-ring {
-          animation: orbit-ring 30s linear infinite;
-        }
-        .animate-orbit-ring-reverse {
-          animation: orbit-ring-reverse 25s linear infinite;
-        }
-        .animate-message-bob {
-          animation: message-bob 2s ease-in-out infinite;
-        }
-        .animate-count-up {
-          animation: count-up 0.5s ease-out;
-        }
-        .animate-signal-wave {
-          animation: signal-wave 2s ease-out infinite;
         }
         .animate-pop-in {
           animation: pop-in 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;

@@ -5,6 +5,7 @@ const VoIPFAQ = () => {
   const [activeTab, setActiveTab] = useState('getting-started');
   const [searchQuery, setSearchQuery] = useState('');
   const [openQuestion, setOpenQuestion] = useState(null);
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
 
   const categories = [
     { id: 'getting-started', name: 'Getting Started', icon: Phone, color: 'bg-blue-500' },
@@ -83,12 +84,64 @@ const VoIPFAQ = () => {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-6 py-12">
-        <div className="flex gap-8">
-          {/* Left Sidebar - Categories */}
-          <div className="hidden lg:flex w-72 flex-shrink-0">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 md:py-12">
+        {/* Mobile Category Dropdown */}
+        <div className="lg:hidden mb-6">
+          <button
+            onClick={() => setShowMobileMenu(!showMobileMenu)}
+            className="w-full flex items-center justify-between px-4 py-3 bg-gradient-to-r from-blue-50 to-indigo-50 border-2 border-blue-500 rounded-xl"
+          >
+            <div className="flex items-center gap-3">
+              {(() => {
+                const Icon = categories.find(c => c.id === activeTab)?.icon;
+                return Icon ? <Icon className="text-blue-600" size={20} /> : null;
+              })()}
+              <span className="font-medium text-blue-700">
+                {categories.find(c => c.id === activeTab)?.name}
+              </span>
+            </div>
+            {showMobileMenu ? (
+              <ChevronUp className="text-blue-600" size={20} />
+            ) : (
+              <ChevronDown className="text-blue-600" size={20} />
+            )}
+          </button>
+          
+          {showMobileMenu && (
+            <div className="mt-2 space-y-2 bg-white border-2 border-gray-200 rounded-xl p-2">
+              {categories.map((category) => {
+                const Icon = category.icon;
+                return (
+                  <button
+                    key={category.id}
+                    onClick={() => {
+                      setActiveTab(category.id);
+                      setShowMobileMenu(false);
+                    }}
+                    className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200 ${
+                      activeTab === category.id
+                        ? 'bg-gradient-to-r from-blue-50 to-indigo-50 border-2 border-blue-500'
+                        : 'bg-gray-50 border-2 border-transparent hover:border-gray-200'
+                    }`}
+                  >
+                    <div className={`${category.color} p-2 rounded-lg`}>
+                      <Icon className="text-white" size={16} />
+                    </div>
+                    <span className={`font-medium text-sm ${activeTab === category.id ? 'text-blue-700' : 'text-gray-700'}`}>
+                      {category.name}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+          )}
+        </div>
+
+        <div className="flex gap-6 lg:gap-8">
+          {/* Left Sidebar - Categories (Desktop) */}
+          <div className="hidden lg:flex w-64 xl:w-72 flex-shrink-0">
             <div className="sticky top-6">
-              <h2 className="text-lg font-semibold text-gray-700 mb-4 px-2">Categories</h2>
+              <h2 className="text-lg font-semibold text-gray-700 mb-4 px-2"></h2>
               <div className="space-y-2">
                 {categories.map((category) => {
                   const Icon = category.icon;
@@ -96,16 +149,16 @@ const VoIPFAQ = () => {
                     <button
                       key={category.id}
                       onClick={() => setActiveTab(category.id)}
-                      className={`w-full flex items-center gap-4 px-4 py-4 rounded-xl transition-all duration-200 ${
+                      className={`w-full flex items-center gap-3 xl:gap-4 px-3 xl:px-4 py-3 xl:py-4 rounded-xl transition-all duration-200 ${
                         activeTab === category.id
                           ? 'bg-gradient-to-r from-blue-50 to-indigo-50 border-2 border-blue-500 shadow-md'
                           : 'bg-gray-50 border-2 border-transparent hover:border-gray-200 hover:shadow'
                       }`}
                     >
-                      <div className={`${category.color} p-2.5 rounded-lg`}>
+                      <div className={`${category.color} p-2 xl:p-2.5 rounded-lg`}>
                         <Icon className="text-white" size={20} />
                       </div>
-                      <span className={`font-medium ${activeTab === category.id ? 'text-blue-700' : 'text-gray-700'}`}>
+                      <span className={`font-medium text-sm xl:text-base ${activeTab === category.id ? 'text-blue-700' : 'text-gray-700'}`}>
                         {category.name}
                       </span>
                     </button>
@@ -116,17 +169,17 @@ const VoIPFAQ = () => {
           </div>
 
           {/* Right Content - FAQ */}
-          <div className="flex-1">
-            <div className="mb-6">
-              <h2 className="text-2xl font-bold text-gray-800 mb-2">
+          <div className="flex-1 min-w-0">
+            <div className="mb-4 sm:mb-6">
+              <h2 className="text-xl sm:text-2xl font-bold text-gray-800 mb-2">
                 {categories.find(c => c.id === activeTab)?.name}
               </h2>
-              <p className="text-gray-600">
-                {filteredFaqs.length} {filteredFaqs.length === 1 ? 'question' : 'questions'} available
+              <p className="text-sm sm:text-base text-gray-600">
+                {filteredFaqs.length} {filteredFaqs.length === 1 ? 'question' : 'questions'} 
               </p>
             </div>
 
-            <div className="space-y-4">
+            <div className="space-y-3 sm:space-y-4">
               {filteredFaqs.length > 0 ? (
                 filteredFaqs.map((faq, index) => (
                   <div
@@ -135,38 +188,38 @@ const VoIPFAQ = () => {
                   >
                     <button
                       onClick={() => toggleQuestion(index)}
-                      className="w-full flex items-center justify-between p-6 text-left"
+                      className="w-full flex items-center justify-between p-4 sm:p-6 text-left"
                     >
-                      <h3 className="text-lg font-semibold text-gray-800 pr-4">{faq.q}</h3>
+                      <h3 className="text-base sm:text-lg font-semibold text-gray-800 pr-3 sm:pr-4">{faq.q}</h3>
                       {openQuestion === index ? (
-                        <ChevronUp className="text-blue-600 flex-shrink-0" size={24} />
+                        <ChevronUp className="text-blue-600 flex-shrink-0" size={20} />
                       ) : (
-                        <ChevronDown className="text-gray-400 flex-shrink-0" size={24} />
+                        <ChevronDown className="text-gray-400 flex-shrink-0" size={20} />
                       )}
                     </button>
                     {openQuestion === index && (
-                      <div className="px-6 pb-6 pt-0">
-                        <div className="border-t-2 border-gray-100 pt-4">
-                          <p className="text-gray-700 leading-relaxed">{faq.a}</p>
+                      <div className="px-4 sm:px-6 pb-4 sm:pb-6 pt-0">
+                        <div className="border-t-2 border-gray-100 pt-3 sm:pt-4">
+                          <p className="text-sm sm:text-base text-gray-700 leading-relaxed">{faq.a}</p>
                         </div>
                       </div>
                     )}
                   </div>
                 ))
               ) : (
-                <div className="text-center py-12 bg-gray-50 rounded-xl">
-                  <Search className="mx-auto text-gray-400 mb-4" size={48} />
-                  <p className="text-gray-600 text-lg">No questions found matching your search.</p>
-                  <p className="text-gray-500 mt-2">Try different keywords or browse categories.</p>
+                <div className="text-center py-8 sm:py-12 bg-gray-50 rounded-xl">
+                  <Search className="mx-auto text-gray-400 mb-4" size={40} />
+                  <p className="text-gray-600 text-base sm:text-lg px-4">No questions found matching your search.</p>
+                  <p className="text-gray-500 text-sm sm:text-base mt-2 px-4">Try different keywords or browse categories.</p>
                 </div>
               )}
             </div>
 
             {/* Contact Support */}
-            <div className="mt-12 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-8 border-2 border-blue-200">
-              <h3 className="text-xl font-bold text-gray-800 mb-2">Still have questions?</h3>
-              <p className="text-gray-600 mb-4">Our support team is here to help you 24/7</p>
-              <button className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-3 rounded-lg font-medium hover:from-blue-700 hover:to-indigo-700 transition-all duration-200 shadow-md hover:shadow-lg">
+            <div className="mt-8 sm:mt-12 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-6 sm:p-8 border-2 border-blue-200">
+              <h3 className="text-lg sm:text-xl font-bold text-gray-800 mb-2">Still have questions?</h3>
+              <p className="text-sm sm:text-base text-gray-600 mb-4">Our support team is here to help you 24/7</p>
+              <button className="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-3 rounded-lg font-medium hover:from-blue-700 hover:to-indigo-700 transition-all duration-200 shadow-md hover:shadow-lg text-sm sm:text-base">
                 Contact Support
               </button>
             </div>
