@@ -81,7 +81,7 @@ export default function AboutUsHeader() {
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2 w-full max-w-md xl:max-w-none">
             <div className="w-full sm:flex-1 xl:w-full xl:max-w-[228px] text-center p-3 sm:p-4 bg-gradient-to-br from-violet-50 to-violet-100">
               <div className="text-2xl sm:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-indigo-700">
-                2015
+                2024
               </div>
               <div className="text-xs sm:text-sm text-gray-600 mt-1">Founded</div>
             </div>
