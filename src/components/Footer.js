@@ -12,7 +12,7 @@ const AnimatedFooter = () => {
     const steps = 60;
     const interval = duration / steps;
 
-    const targets = { users: 5000, calls: 2500000, uptime: 99.9 };
+    const targets = { users: 50000, calls: 2500000, uptime: 99.9 };
     let step = 0;
 
     const timer = setInterval(() => {
@@ -182,7 +182,7 @@ const AnimatedFooter = () => {
                 </div>
                 <div className="flex items-center gap-2 sm:gap-3 hover:translate-x-2 transition-transform duration-200">
                   <Mail size={16} className="text-blue-200 flex-shrink-0" />
-                  <span className="text-xs sm:text-sm break-all">support@voipconnect.com</span>
+                  <span className="text-xs sm:text-sm break-all">support@giantvoip.com</span>
                 </div>
                 <div className="flex items-center gap-2 sm:gap-3 hover:translate-x-2 transition-transform duration-200">
                   <MapPin size={16} className="text-blue-200 flex-shrink-0" />

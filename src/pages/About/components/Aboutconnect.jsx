@@ -51,8 +51,8 @@ const ContactSection = () => {
               </div>
               <div>
                 <h4 className="font-semibold text-base sm:text-lg mb-1 text-gray-800">Email Us</h4>
-                <p className="text-sm sm:text-base">sales@teleconnect.com</p>
-                <p className="text-sm sm:text-base">support@teleconnect.com</p>
+                <p className="text-sm sm:text-base">sales@giantvoip.com</p>
+                <p className="text-sm sm:text-base">support@giantvoip.com</p>
               </div>
             </div>
 
