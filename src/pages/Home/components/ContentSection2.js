@@ -29,7 +29,7 @@ export default function ContentSection2() {
         <div className="flex flex-col md:flex-row items-center gap-8 sm:gap-10 md:gap-12">
           <div className="w-full md:w-1/2">
             <img
-              src="/assets/5132732.jpg"
+              src="/assets/homecontent4.jpg"
               alt="Predictive Dialer Solutions"
               className="rounded-xl object-cover w-full h-auto max-h-[300px] sm:max-h-[400px] md:max-h-full"
             />
@@ -64,7 +64,7 @@ export default function ContentSection2() {
         <div className="flex flex-col md:flex-row-reverse items-center gap-8 sm:gap-10 md:gap-12">
           <div className="w-full md:w-1/2">
             <img
-              src="/assets/3704249.jpg"
+              src="/assets/homecontent5.jpg"
               alt="Auto Dialer Solutions"
               className="rounded-xl object-cover w-full h-auto max-h-[300px] sm:max-h-[400px] md:max-h-full"
             />
@@ -98,7 +98,7 @@ export default function ContentSection2() {
         <div className="flex flex-col md:flex-row items-center gap-8 sm:gap-10 md:gap-12">
           <div className="w-full md:w-1/2">
             <img
-              src="/assets/8836574.jpg"
+              src="/assets/homecontent6.jpg"
               alt="Call Center Dialer Solutions"
               className="rounded-xl object-cover w-full h-auto max-h-[300px] sm:max-h-[400px] md:max-h-full"
             />

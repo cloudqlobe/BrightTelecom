@@ -29,7 +29,7 @@ export default function ContentSection2() {
         <div className="flex flex-col md:flex-row items-center gap-8 sm:gap-10 md:gap-12">
           <div className="w-full md:w-1/2">
             <img
-              src="/assets/5124556.jpg"
+              src="/assets/homecontent1.jpg"
               alt="CC Voice Routes"
               className="rounded-xl object-cover w-full h-auto max-h-[300px] sm:max-h-[400px] md:max-h-full"
             />
@@ -64,7 +64,7 @@ export default function ContentSection2() {
         <div className="flex flex-col md:flex-row-reverse items-center gap-8 sm:gap-10 md:gap-12">
           <div className="w-full md:w-1/2">
             <img
-              src="/assets/3692685.jpg"
+              src="/assets/homecontent2.jpg"
               alt="CLI Routes"
               className="rounded-xl object-cover w-full h-auto max-h-[300px] sm:max-h-[400px] md:max-h-full"
             />
@@ -99,7 +99,7 @@ export default function ContentSection2() {
         <div className="flex flex-col md:flex-row items-center gap-8 sm:gap-10 md:gap-12">
           <div className="w-full md:w-1/2">
             <img
-              src="/assets/5143151.jpg"
+              src="/assets/homecontent3.jpg"
               alt="CLI & CC Termination"
               className="rounded-xl object-cover w-full h-auto max-h-[300px] sm:max-h-[400px] md:max-h-full"
             />

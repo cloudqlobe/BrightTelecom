@@ -175,7 +175,7 @@ const VoIPContactHeader = () => {
   ];
 
   return (
-    <div className="min-h-screen relative overflow-hidden bg-white">
+<div className="min-h-auto sm:min-h-screen relative overflow-hidden bg-white">
       {/* Subtle Background Pattern */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 opacity-[0.02]">
@@ -200,7 +200,10 @@ const VoIPContactHeader = () => {
       </div>
 
       <div className="relative z-10 max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-16 items-center min-h-[85vh]">
+<div className="grid grid-cols-1 lg:grid-cols-2
+gap-8 sm:gap-10 md:gap-12 lg:gap-16
+items-center
+min-h-auto sm:min-h-[500px] lg:min-h-[85vh]">
 
           {/* Left Side Content */}
           <div className="flex flex-col items-center lg:items-start text-center lg:text-left space-y-5 sm:space-y-6 lg:space-y-8 lg:mt-[-250px] lg:ml-[66px] px-2 sm:px-4 lg:px-0">

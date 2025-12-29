@@ -23,8 +23,8 @@ export default function AboutUsHeader() {
   }, []);
 
   const features = [
-    { icon: Users, label: "500K+ Users", color: "from-orange-500 to-orange-600" },
-    { icon: Globe, label: "150+ Countries", color: "from-green-500 to-green-600" },
+    { icon: Users, label: "500+ Users", color: "from-orange-500 to-orange-600" },
+    { icon: Globe, label: "50+ Countries", color: "from-green-500 to-green-600" },
     { icon: TrendingUp, label: "99.9% Uptime", color: "from-red-500 to-red-600" },
     { icon: Target, label: "Industry Leader", color: "from-violet-600 to-indigo-600" }
   ];
@@ -88,7 +88,7 @@ export default function AboutUsHeader() {
 
             <div className="w-full sm:flex-1 xl:w-full xl:max-w-[228px] text-center p-3 sm:p-4 bg-gradient-to-br from-cyan-50 to-cyan-100">
               <div className="text-2xl sm:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-indigo-700">
-                500K+
+                500+
               </div>
               <div className="text-xs sm:text-sm text-gray-600 mt-1">Active Users</div>
             </div>
@@ -237,7 +237,7 @@ export default function AboutUsHeader() {
                 <Users className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
               </div>
               <div>
-                <div className="text-gray-900 font-bold text-base sm:text-lg">500K+</div>
+                <div className="text-gray-900 font-bold text-base sm:text-lg">500+</div>
                 <div className="text-gray-600 text-xs">Users</div>
               </div>
             </div>
@@ -255,7 +255,7 @@ export default function AboutUsHeader() {
                 <Globe className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
               </div>
               <div>
-                <div className="text-gray-900 font-bold text-base sm:text-lg">150+</div>
+                <div className="text-gray-900 font-bold text-base sm:text-lg">50+</div>
                 <div className="text-gray-600 text-xs">Countries</div>
               </div>
             </div>

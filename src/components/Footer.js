@@ -12,7 +12,7 @@ const AnimatedFooter = () => {
     const steps = 60;
     const interval = duration / steps;
 
-    const targets = { users: 50000, calls: 2500000, uptime: 99.9 };
+    const targets = { users: 500, calls: 2500000, uptime: 99.9 };
     let step = 0;
 
     const timer = setInterval(() => {
@@ -39,8 +39,14 @@ const AnimatedFooter = () => {
   ];
 
   const quickLinks = [
-    'About Us', 'Pricing', 'Features', 'Contact', 'Support', 'Blog'
+    { label: 'About Us', href: '/about' },
+    { label: 'Services', href: '/services' },
+    { label: 'Faq', href: '/faq' },
+    { label: 'Contact', href: '/contact' },
+    { label: 'Support', href: '/support' },
+    { label: 'Blog', href: '/blog' }
   ];
+
 
   const socialLinks = [
     { icon: Facebook, color: 'hover:bg-blue-600' },
@@ -61,22 +67,26 @@ const AnimatedFooter = () => {
 
       {/* Main Footer Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 sm:pt-14 md:pt-16 pb-6 sm:pb-8">
-        
+
         {/* Top Section - Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7 md:gap-8 mb-12 sm:mb-14 md:mb-16">
-          
+
           {/* Company Info & Newsletter */}
           <div className="lg:col-span-1 space-y-5 sm:space-y-6">
             <div className="flex items-center gap-2 sm:gap-3 mb-5 sm:mb-6">
-              <div className="bg-gradient-to-r from-blue-600 to-indigo-600 p-2 sm:p-3 rounded-xl shadow-lg animate-pulse-slow">
-                <Phone className="text-white" size={24} />
+              <div className="bg-white p-2 sm:p-3 rounded-xl shadow-lg animate-pulse-slow">
+                <img
+                  src="/assets/logo1.png"
+                  alt="Logo"
+                  style={{ width: "68px", height: "50px", marginRight: "15px" }}
+                />
               </div>
               <div>
                 <h3 className="text-xl sm:text-2xl font-bold text-gray-800">GIANT VOIP</h3>
                 <p className="text-xs sm:text-sm text-gray-600">Future of Communication</p>
               </div>
             </div>
-            
+
             <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
               Transform your business communication with our cutting-edge VoIP solutions. Trusted by thousands worldwide.
             </p>
@@ -132,11 +142,10 @@ const AnimatedFooter = () => {
                     key={index}
                     onMouseEnter={() => setHoveredService(index)}
                     onMouseLeave={() => setHoveredService(null)}
-                    className={`bg-white bg-opacity-60 backdrop-blur-sm rounded-xl p-3 sm:p-4 cursor-pointer transition-all duration-300 border-2 ${
-                      hoveredService === index 
-                        ? 'border-blue-500 shadow-xl scale-105 bg-opacity-90' 
-                        : 'border-transparent shadow-md hover:shadow-lg'
-                    }`}
+                    className={`bg-white bg-opacity-60 backdrop-blur-sm rounded-xl p-3 sm:p-4 cursor-pointer transition-all duration-300 border-2 ${hoveredService === index
+                      ? 'border-blue-500 shadow-xl scale-105 bg-opacity-90'
+                      : 'border-transparent shadow-md hover:shadow-lg'
+                      }`}
                   >
                     <Icon className={`${service.color} mb-2 transition-transform duration-300 ${hoveredService === index ? 'scale-110' : ''}`} size={20} />
                     <p className="text-xs sm:text-sm font-medium text-gray-800">{service.name}</p>
@@ -154,20 +163,30 @@ const AnimatedFooter = () => {
                 <TrendingUp className="text-blue-600" size={20} />
                 Quick Links
               </h4>
+
               <div className="grid grid-cols-2 gap-2 sm:gap-3">
                 {quickLinks.map((link, index) => (
-                  <div
+                  <a
                     key={index}
-                    className="bg-white bg-opacity-60 backdrop-blur-sm rounded-lg px-3 sm:px-4 py-2 sm:py-3 cursor-pointer hover:bg-opacity-90 transition-all duration-200 hover:translate-x-2 shadow-md hover:shadow-lg border border-transparent hover:border-blue-300"
+                    href={link.href}
+                    className="group bg-white bg-opacity-60 backdrop-blur-sm
+        rounded-lg px-3 sm:px-4 py-2 sm:py-3
+        cursor-pointer transition-all duration-200
+        hover:bg-opacity-90 hover:translate-x-2
+        shadow-md hover:shadow-lg
+        border border-transparent hover:border-blue-300"
                   >
-                    <p className="text-xs sm:text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors flex items-center gap-2">
-                      <ArrowRight size={12} />
-                      {link}
+                    <p className="text-xs sm:text-sm font-medium text-gray-700
+        group-hover:text-blue-600 transition-colors
+        flex items-center gap-2">
+                      <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
+                      {link.label}
                     </p>
-                  </div>
+                  </a>
                 ))}
               </div>
             </div>
+
 
             {/* Contact Info */}
             <div className="bg-gradient-to-br from-blue-600 to-indigo-600 rounded-2xl p-5 sm:p-6 text-white shadow-xl">
@@ -196,7 +215,7 @@ const AnimatedFooter = () => {
         {/* Bottom Section */}
         <div className="border-t-2 border-blue-200 pt-6 sm:pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-5 sm:gap-6">
-            
+
             {/* Social Links */}
             <div className="flex items-center gap-2 sm:gap-3">
               {socialLinks.map((social, index) => {

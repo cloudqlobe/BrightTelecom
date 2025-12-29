@@ -28,7 +28,7 @@ export default function AboutUsSections() {
           {/* Image */}
           <div className="w-full order-2 md:order-2">
             <img
-              src="/assets/6180780.jpg"
+              src="/assets/aboutcontent1.jpg"
               alt="About Us"
               className="rounded-xl sm:rounded-2xl w-full object-cover mt-4 sm:mt-6 md:mt-0"
             />
@@ -58,7 +58,7 @@ export default function AboutUsSections() {
           {/* Image */}
           <div className="w-full order-2 md:order-1">
             <img
-              src="/assets/5_communication02.jpg"
+              src="/assets/aboutcontent2.jpg"
               alt="Service Quality"
               className="rounded-xl sm:rounded-2xl w-full object-cover mt-4 sm:mt-6 md:mt-0"
             />
@@ -88,7 +88,7 @@ export default function AboutUsSections() {
           {/* Image */}
           <div className="w-full order-2 md:order-2">
             <img
-              src="/assets/6247730.jpg"
+              src="/assets/aboutcontent3.jpg"
               alt="Support & Assistance"
               className="rounded-xl sm:rounded-2xl w-full object-cover mt-4 sm:mt-6 md:mt-0"
             />
