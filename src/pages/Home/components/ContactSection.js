@@ -176,7 +176,7 @@ const VoIPRegister = () => {
                   <div className="text-blue-100 text-xs sm:text-sm">Uptime</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-0.5 sm:mb-1">50K+</div>
+                  <div className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-0.5 sm:mb-1">500+</div>
                   <div className="text-blue-100 text-xs sm:text-sm">Users</div>
                 </div>
                 <div className="text-center">

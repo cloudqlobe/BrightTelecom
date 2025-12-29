@@ -39,12 +39,12 @@ const AnimatedFooter = () => {
   ];
 
   const quickLinks = [
+    { label: 'Home', href: '/' },
     { label: 'About Us', href: '/about' },
     { label: 'Services', href: '/services' },
     { label: 'Faq', href: '/faq' },
     { label: 'Contact', href: '/contact' },
-    { label: 'Support', href: '/support' },
-    { label: 'Blog', href: '/blog' }
+    { label: 'Register', href: '/register' }
   ];
 
 
@@ -74,7 +74,7 @@ const AnimatedFooter = () => {
           {/* Company Info & Newsletter */}
           <div className="lg:col-span-1 space-y-5 sm:space-y-6">
             <div className="flex items-center gap-2 sm:gap-3 mb-5 sm:mb-6">
-              <div className="bg-white p-2 sm:p-3 rounded-xl shadow-lg animate-pulse-slow">
+              <div className="bg-white p-2 sm:p-3 rounded-xl ">
                 <img
                   src="/assets/logo1.png"
                   alt="Logo"

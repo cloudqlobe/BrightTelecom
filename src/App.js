@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar";
 import Contact from "./pages/Contact/page";
 import Services from "./pages/Services/page";
 import FAQ from "./pages/Faq/page";
+import Registerpage from "./pages/Register/Page";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/services" element={<Services />} />
         <Route path="/faq" element={<FAQ />} />
         <Route path="/contact" element={<Contact />} />
+                <Route path="/register" element={<Registerpage />} />
       </Routes>
 
       <Footer />

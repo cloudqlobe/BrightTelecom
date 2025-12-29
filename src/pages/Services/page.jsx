@@ -1,18 +1,28 @@
+import { useRef } from "react";
 import Serviceanimation from "./components/Serviceanimation";
 import Serviceconnect from "./components/Serviceconnect";
 import Servicecontent from "./components/Servicecontent";
 import Servicesheader from "./components/Servicesheader";
 
 export default function Services() {
-  return (
-    
-<div>
-  <Servicesheader/>
-  <Servicecontent/>
-  <Serviceanimation/>
-  <Serviceconnect/>
+  const contactRef = useRef(null);
 
-</div>
- 
+  const scrollToContact = () => {
+    contactRef.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
+  return (
+
+    <div>
+      <Servicesheader onContactClick={scrollToContact} />
+      <Servicecontent />
+      <Serviceanimation />
+      <div ref={contactRef}>
+        <Serviceconnect />
+      </div>
+    </div>
+
   );
 }

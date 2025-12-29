@@ -1,16 +1,25 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import Contactheader from './components/Contactheader'
 import Contactconnect from './components/Contactconnect'
 
+const Page = () => {
+  const contactRef = useRef(null);
 
-const page = () => {
+  const scrollToContact = () => {
+    contactRef.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
+
   return (
     <div>
-      <Contactheader/>
-      <Contactconnect/>
-     
+      <Contactheader onContactClick={scrollToContact} />
+      <div ref={contactRef}>
+        <Contactconnect />
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default page
+export default Page;

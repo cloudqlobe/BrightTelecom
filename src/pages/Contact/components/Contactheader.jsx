@@ -2,7 +2,7 @@ import React from 'react';
 import { Mail, Phone, MapPin, Send, MessageSquare } from 'lucide-react';
 import { Wifi, Zap } from 'lucide-react';
 
-export default function ContactHeader() {
+export default function ContactHeader({onContactClick}) {
   return (
     <>
       <style>{`
@@ -75,13 +75,7 @@ export default function ContactHeader() {
         }
       `}</style>
 
-      <header className=" bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 min-h-screen flex items-center relative overflow-hidden pt-[35px] pb-[35px]">
-        {/* Animated Background Elements */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-indigo-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-float"></div>
-          <div className="absolute top-40 right-10 w-72 h-72 bg-purple-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-float" style={{ animationDelay: '1s' }}></div>
-          <div className="absolute -bottom-32 left-1/3 w-72 h-72 bg-pink-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-float" style={{ animationDelay: '2s' }}></div>
-        </div>
+      <header className=" bg-white min-h-screen flex items-center relative overflow-hidden pt-[35px] pb-[35px]">
 
         <div className="max-w-7xl mx-auto px-6 lg:px-6 w-full relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center text-center lg:text-left">
@@ -96,26 +90,24 @@ export default function ContactHeader() {
                 </span>
               </h1>
 
-            <p className="font-inter text-gray-600 text-sm sm:text-base md:text-[17px] leading-6 sm:leading-7 tracking-normal text-justify sm:text-left max-w-xl mx-auto lg:mx-0 md:text-justify lg:text-justify">
+              <p className="font-inter text-gray-600 text-sm sm:text-base md:text-[17px] leading-6 sm:leading-7 tracking-normal text-justify sm:text-left max-w-xl mx-auto lg:mx-0 md:text-justify lg:text-justify">
                 Have questions about our services or need expert assistance?
                 Our team is always ready to help you with reliable and timely support.
                 Reach out to us for sales inquiries, technical help, or general information.
-                We value your time and ensure quick responses to all messages.
-                Let’s connect and build seamless communication solutions together.
               </p>
 
-          <div className="flex flex-col sm:flex-row md:justify-center lg:justify-start gap-4 pt-2 w-full">
-                <button className="group relative px-8 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 text-white squared-xl font-semibold text-lg shadow-lg shadow-indigo-500/50 hover:shadow-xl hover:shadow-indigo-600/60 transition-all duration-300 hover:scale-105">
+              <div className="flex flex-col sm:flex-row md:justify-center lg:justify-start gap-4 pt-2 w-full">
+                <button onClick={onContactClick} className="group relative px-8 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 text-white squared-xl font-semibold text-lg transition-all duration-300 hover:scale-105">
                   Get Started
                   <span className="absolute inset-0 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10 blur"></span>
                 </button>
 
-                <button className="px-8 py-4 bg-white text-gray-900 squared-xl font-semibold text-lg border-2 border-gray-200 hover:border-indigo-600 hover:text-indigo-600 transition-all duration-300 hover:scale-105">
+                <button onClick={onContactClick} className="px-8 py-4 bg-white text-gray-900 squared-xl font-semibold text-lg border-2 border-gray-200 hover:border-indigo-600 hover:text-indigo-600 transition-all duration-300 hover:scale-105">
                   Get Connected
                 </button>
               </div>
 
-<div className="hidden sm:flex md:justify-center lg:justify-start items-center gap-8 pt-4">
+              <div className="hidden sm:flex md:justify-center lg:justify-start items-center gap-8 pt-4">
                 <div className="flex items-center gap-2">
                   <Zap className="w-5 h-5 text-yellow-500" />
                   <span className="text-sm text-gray-600 font-medium">99.9% Uptime</span>
@@ -134,7 +126,7 @@ export default function ContactHeader() {
             {/* Right Side - Interactive Contact Visual */}
             <div className="relative hidden lg:flex items-center justify-center 
   h-[600px] xl:h-[700px]"
-              style={{ marginTop: "-82px", marginLeft:"100px" }}>
+              style={{ marginTop: "-82px", marginLeft: "100px" }}>
               {/* Rotating Circle Background */}
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="w-80 h-80 xl:w-96 xl:h-96 

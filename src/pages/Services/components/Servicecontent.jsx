@@ -35,7 +35,7 @@ export default function Servicescontent() {
           {/* Image */}
           <div className="w-full order-2 md:order-2">
             <img
-              src="/assets/5159816.jpg"
+              src="/assets/servicecontent1.jpg"
               alt="CLI Routes"
               className="rounded-xl sm:rounded-2xl w-full object-cover mt-4 sm:mt-6 md:mt-0"
             />
@@ -71,7 +71,7 @@ export default function Servicescontent() {
           {/* Image */}
           <div className="w-full order-2 md:order-1">
             <img
-              src="/assets/7055173.jpg"
+              src="/assets/servicecontent2.jpg"
               alt="CC Routes"
               className="rounded-xl sm:rounded-2xl w-full object-cover mt-4 sm:mt-6 md:mt-0"
             />
@@ -106,7 +106,7 @@ export default function Servicescontent() {
           {/* Image */}
           <div className="w-full order-2 md:order-2">
             <img
-              src="/assets/6247730.jpg"
+              src="/assets/servicecontent3.jpg"
               alt="Dialer Solutions"
               className="rounded-xl sm:rounded-2xl w-full object-cover mt-4 sm:mt-6 md:mt-0"
             />

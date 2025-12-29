@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Mic, Volume2, Wifi, Radio, Smartphone, Headphones, Zap, Signal } from 'lucide-react';
 
-export default function VoIPHeader() {
+export default function VoIPHeader({ onContactClick }) {
   const [time, setTime] = useState(0);
 
   useEffect(() => {
@@ -76,7 +76,7 @@ export default function VoIPHeader() {
 
 
           <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 pt-2 w-full md:justify-center">
-            <button
+            <button onClick={onContactClick}
               className="w-full sm:w-[200px] group relative px-8 py-4 
       bg-gradient-to-r from-indigo-500 via-violet-600 to-cyan-600 
       text-white squared-full font-semibold overflow-hidden 
@@ -86,7 +86,7 @@ export default function VoIPHeader() {
               <div className="absolute inset-0 bg-gradient-to-r from-cyan-600 via-violet-600 to-indigo-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </button>
 
-            <button
+            <button onClick={onContactClick}
               className="w-full sm:w-[200px] px-8 py-4 
       border-2 border-gray-900 text-gray-900 
       squared-full font-semibold relative overflow-hidden group

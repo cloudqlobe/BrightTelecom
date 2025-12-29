@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Users, Target, Globe, TrendingUp } from 'lucide-react';
 
-export default function AboutUsHeader() {
+export default function AboutUsHeader({onContactClick, onLearnClick}) {
   const [time, setTime] = useState(0);
   const [particlePositions, setParticlePositions] = useState([]);
 
@@ -96,19 +96,19 @@ export default function AboutUsHeader() {
 
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2 w-full max-w-md xl:max-w-none">
-            <button className="w-full sm:flex-1 xl:w-full xl:max-w-[228px] group relative px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-violet-600 via-cyan-500 to-indigo-600 text-white font-semibold overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-violet-300/50 hover:scale-105">
+            <button onClick={onLearnClick} className="w-full sm:flex-1 xl:w-full xl:max-w-[228px] group relative px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-violet-600 via-cyan-500 to-indigo-600 text-white font-semibold overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-violet-300/50 hover:scale-105">
               <span className="relative z-10 text-sm sm:text-base">Learn More</span>
               <div className="absolute inset-0 bg-gradient-to-r from-indigo-600 via-violet-500 to-cyan-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </button>
 
-            <button className="w-full sm:flex-1 xl:w-full xl:max-w-[228px] px-6 sm:px-8 py-3 sm:py-4 border-2 border-gray-900 text-gray-900 font-semibold hover:bg-gray-900 hover:text-white hover:shadow-xl transition-all duration-300 text-sm sm:text-base">
+            <button onClick={onContactClick} className="w-full sm:flex-1 xl:w-full xl:max-w-[228px] px-6 sm:px-8 py-3 sm:py-4 border-2 border-gray-900 text-gray-900 font-semibold hover:bg-gray-900 hover:text-white hover:shadow-xl transition-all duration-300 text-sm sm:text-base">
               Contact Us
             </button>
           </div>
         </div>
 
         {/* Right Side - 3D Globe Network Animation */}
-        <div className="hidden lg:flex relative h-[400px] sm:h-[480px] md:h-[520px] flex items-center justify-center xl:mt-[-130px] xl:ml-[130px]">
+        <div className="hidden lg:flex relative h-[400px] sm:h-[480px] md:h-[520px] flex items-center justify-center xl:mt-[-62px] xl:ml-[130px]">
           {/* Glowing background orbs */}
           <div className="absolute inset-0">
             <div

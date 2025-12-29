@@ -113,7 +113,7 @@ const ContactCard = ({ method, index, isActive, radius, mobileTop }) => {
   );
 };
 
-const VoIPContactHeader = () => {
+const VoIPContactHeader = ({onContactClick}) => {
   const [activeContact, setActiveContact] = useState(0);
   const [messageCount, setMessageCount] = useState(0);
   const [pulseActive, setPulseActive] = useState(false);
@@ -225,13 +225,13 @@ min-h-auto sm:min-h-[500px] lg:min-h-[85vh]">
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row flex-wrap justify-center lg:justify-start gap-3 sm:gap-4 pt-2 w-full max-w-md lg:max-w-none">
-              <button className="group w-full sm:w-auto px-5 sm:px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-violet-600 via-cyan-600 to-indigo-600 text-white text-sm sm:text-base md:text-lg hover:shadow-2xl hover:shadow-violet-400/50 transition-all duration-500 hover:scale-105 flex items-center justify-center gap-2 relative overflow-hidden">
+              <button onClick={onContactClick} className="group w-full sm:w-auto px-5 sm:px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-violet-600 via-cyan-600 to-indigo-600 text-white text-sm sm:text-base md:text-lg hover:shadow-2xl hover:shadow-violet-400/50 transition-all duration-500 hover:scale-105 flex items-center justify-center gap-2 relative overflow-hidden">
                 <span className="relative z-10">Get Started Free</span>
                 <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform relative z-10" />
                 <div className="absolute inset-0 bg-gradient-to-r from-indigo-600 via-violet-600 to-cyan-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </button>
 
-              <button className="w-full sm:w-auto px-5 sm:px-6 md:px-8 py-3 md:py-4 bg-white border-2 border-gray-300 text-gray-900 text-sm sm:text-base md:text-lg hover:bg-violet-50 hover:border-violet-400 transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 shadow-sm hover:shadow-md">
+              <button onClick={onContactClick} className="w-full sm:w-auto px-5 sm:px-6 md:px-8 py-3 md:py-4 bg-white border-2 border-gray-300 text-gray-900 text-sm sm:text-base md:text-lg hover:bg-violet-50 hover:border-violet-400 transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 shadow-sm hover:shadow-md">
                 <Phone className="w-4 h-4 sm:w-5 sm:h-5" />
                 Request Demo
               </button>
