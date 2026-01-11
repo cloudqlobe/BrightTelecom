@@ -26,6 +26,17 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
+
+  <script>
+    document.addEventListener("contextmenu", e => e.preventDefault(), false);
+
+    document.addEventListener("keydown", function (event) {
+      if (event.ctrlKey || event.keyCode == 123) { // Ctrl key or F12
+        event.preventDefault();
+      }
+    });
+  </script>
+
   <title>GIANT VOIP</title>
 </head>
 
