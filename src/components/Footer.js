@@ -197,7 +197,7 @@ const AnimatedFooter = () => {
               <div className="space-y-2 sm:space-y-3">
                 <div className="flex items-center gap-2 sm:gap-3 hover:translate-x-2 transition-transform duration-200">
                   <Phone size={16} className="text-blue-200 flex-shrink-0" />
-                  <span className="text-xs sm:text-sm">+1 (555) 123-4567</span>
+                  <span className="text-xs sm:text-sm">+44 7476 658542</span>
                 </div>
                 <div className="flex items-center gap-2 sm:gap-3 hover:translate-x-2 transition-transform duration-200">
                   <Mail size={16} className="text-blue-200 flex-shrink-0" />

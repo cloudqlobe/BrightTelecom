@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Mail, Phone, MapPin, MessageCircle, Send, Clock, Globe, Headphones, CheckCircle, ArrowRight } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { Mail, Phone, MapPin, MessageCircle, Clock, CheckCircle, ArrowRight } from 'lucide-react';
 import { PhoneCall } from 'lucide-react';
 
 // Individual Contact Card Component
@@ -117,6 +117,7 @@ const VoIPContactHeader = ({onContactClick}) => {
   const [activeContact, setActiveContact] = useState(0);
   const [messageCount, setMessageCount] = useState(0);
   const [pulseActive, setPulseActive] = useState(false);
+console.log(messageCount,pulseActive);
 
   useEffect(() => {
     const contactInterval = setInterval(() => {
@@ -148,7 +149,7 @@ const VoIPContactHeader = ({onContactClick}) => {
     {
       icon: Phone,
       title: 'Call Center',
-      info: '+1 (800) 123-4567',
+      info: '+44 7476 658542',
       desc: 'Speak with our experts',
       color: 'cyan',
       bgColor: 'bg-gradient-to-br from-orange-300 to-amber-500',
