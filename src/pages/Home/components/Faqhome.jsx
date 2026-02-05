@@ -3,7 +3,7 @@ import { Search, Phone, DollarSign, Settings, Shield, Headphones, Wifi, ChevronD
 
 const VoIPFAQ = () => {
   const [activeTab, setActiveTab] = useState('getting-started');
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery] = useState('');
   const [openQuestion, setOpenQuestion] = useState(null);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
 
@@ -118,7 +118,6 @@ const VoIPFAQ = () => {
           {/* Left Sidebar - Categories (Desktop) */}
           <div className="hidden lg:flex w-64 xl:w-72 flex-shrink-0">
             <div className="sticky top-6">
-              <h2 className="text-lg font-semibold text-gray-700 mb-4 px-2"></h2>
               <div className="space-y-2">
                 {categories.map((category) => {
                   const Icon = category.icon;

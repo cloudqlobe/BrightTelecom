@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Phone, Mail, User, Building2, MessageSquare, Globe, Zap, Shield, Headphones, ArrowRight, Users } from 'lucide-react';
+import { useState } from 'react';
+import { Phone, Mail, User, Building2, MessageSquare, Globe, Zap, Shield, Headphones, ArrowRight } from 'lucide-react';
 
 const VoIPRegister = () => {
   const [formData, setFormData] = useState({

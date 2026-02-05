@@ -100,25 +100,25 @@ const Navbar = () => {
 
           {/* RIGHT — DESKTOP SOCIAL ICONS */}
           <div className="hidden lg:flex items-center space-x-3 lg:space-x-4">
-            <a href="#" className="transform hover:-translate-y-1 transition-transform duration-200 group">
+            <a href="/" className="transform hover:-translate-y-1 transition-transform duration-200 group">
               <div className="w-8 h-8 rounded-full bg-green-500 flex items-center justify-center shadow-md group-hover:shadow-lg group-hover:shadow-green-500/30 transition-all duration-200">
                 <MessageCircle className="text-white w-5 h-5" />
               </div>
             </a>
 
-            <a href="#" className="transform hover:-translate-y-1 transition-transform duration-200 group">
+            <a href="/" className="transform hover:-translate-y-1 transition-transform duration-200 group">
               <div className="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center shadow-md group-hover:shadow-lg group-hover:shadow-blue-600/30 transition-all duration-200">
                 <Linkedin className="text-white w-5 h-5" />
               </div>
             </a>
 
-            <a href="#" className="transform hover:-translate-y-1 transition-transform duration-200 group">
+            <a href="/" className="transform hover:-translate-y-1 transition-transform duration-200 group">
               <div className="w-8 h-8 rounded-full bg-gradient-to-br from-yellow-400 via-pink-500 to-purple-600 flex items-center justify-center shadow-md group-hover:shadow-lg group-hover:shadow-pink-500/30 transition-all duration-200">
                 <Instagram className="text-white w-5 h-5" />
               </div>
             </a>
 
-            <a href="#" className="transform hover:-translate-y-1 transition-transform duration-200 group">
+            <a href="/" className="transform hover:-translate-y-1 transition-transform duration-200 group">
               <div className="w-8 h-8 rounded-full bg-blue-700 flex items-center justify-center shadow-md group-hover:shadow-lg group-hover:shadow-blue-700/30 transition-all duration-200">
                 <Facebook className="text-white w-5 h-5" />
               </div>
@@ -221,7 +221,7 @@ const Navbar = () => {
 
             <div className="flex justify-center space-x-4">
               <a
-                href="#"
+                href="/"
                 className="transform hover:-translate-y-1 transition-transform duration-200 group p-2 rounded-lg hover:bg-slate-100"
                 onClick={closeMobileMenu}
               >
@@ -231,7 +231,7 @@ const Navbar = () => {
               </a>
 
               <a
-                href="#"
+                href="/"
                 className="transform hover:-translate-y-1 transition-transform duration-200 group p-2 rounded-lg hover:bg-slate-100"
                 onClick={closeMobileMenu}
               >
@@ -241,7 +241,7 @@ const Navbar = () => {
               </a>
 
               <a
-                href="#"
+                href="/"
                 className="transform hover:-translate-y-1 transition-transform duration-200 group p-2 rounded-lg hover:bg-slate-100"
                 onClick={closeMobileMenu}
               >
@@ -251,7 +251,7 @@ const Navbar = () => {
               </a>
 
               <a
-                href="#"
+                href="/"
                 className="transform hover:-translate-y-1 transition-transform duration-200 group p-2 rounded-lg hover:bg-slate-100"
                 onClick={closeMobileMenu}
               >

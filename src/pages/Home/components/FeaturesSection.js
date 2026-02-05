@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Phone, Shield, Zap, Globe, Users, BarChart3, CheckCircle2, ArrowRight } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { Phone, Shield, Zap, Globe, Users, BarChart3, ArrowRight } from 'lucide-react';
  
 const VoIPFeaturesSection = () => {
   const [activeFeature, setActiveFeature] = useState(0);

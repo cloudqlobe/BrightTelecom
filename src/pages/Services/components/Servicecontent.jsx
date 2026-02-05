@@ -1,5 +1,4 @@
-import React from 'react';
-import { PhoneCall, Settings, ShieldCheck, Globe } from "lucide-react";
+import { Settings, ShieldCheck, Globe } from "lucide-react";
 
 export default function Servicescontent() {
   return (

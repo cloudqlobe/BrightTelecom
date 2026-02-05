@@ -22,14 +22,6 @@ export default function VoIPHeader({ onContactClick }) {
     { Icon: Signal, color: 'from-cyan-600 to-violet-600', delay: 3, size: 'medium' }
   ];
 
-  const particles = Array.from({ length: 30 }, (_, i) => ({
-    x: Math.random() * 100,
-    y: Math.random() * 100,
-    size: Math.random() * 4 + 2,
-    speed: Math.random() * 0.5 + 0.2,
-    delay: i * 0.3
-  }));
-
   return (
     <div className="min-h-screen bg-white flex items-center justify-center p-8 overflow-hidden">
       <div className="max-w-7xl w-full grid grid-cols-1 xl:grid-cols-2 gap-16 items-center relative z-10">
