@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { HelpCircle, Search, Book, MessageCircle, ChevronRight, Zap, Shield, DollarSign, Settings, Users, TrendingUp } from 'lucide-react';
+import { HelpCircle, Search, Book, MessageCircle, Zap, Shield, DollarSign, Settings, Users, TrendingUp } from 'lucide-react';
 
 const VoIPFAQHeader = () => {
   const [searchActive, setSearchActive] = useState(false);
@@ -19,12 +19,6 @@ const VoIPFAQHeader = () => {
     { icon: Shield, title: 'Security', color: 'rose' },
     { icon: Users, title: 'Account', color: 'amber' },
     { icon: TrendingUp, title: 'Features', color: 'blue' }
-  ];
-
-  const popularQuestions = [
-    'How do I get started?',
-    'What are the pricing plans?',
-    'Is my data secure?'
   ];
 
   return (
